@@ -42,6 +42,17 @@ namespace Platformer.Model
         /// 全局重力
         /// </summary>
         public float gForce = 9.8f;
+        
+        
+        /// The force to apply vertically at all times
+        [Tooltip("The force to apply vertically at all times")]
+        public float Gravity = -30f;
+        /// a multiplier applied to the character's gravity when going down
+        [Tooltip("a multiplier applied to the character's gravity when going down")]
+        public float FallMultiplier = 5f;
+        /// a multiplier applied to the character's gravity when going up
+        [Tooltip("a multiplier applied to the character's gravity when going up")]
+        public float AscentMultiplier = 0.5f;
 
     }
 }

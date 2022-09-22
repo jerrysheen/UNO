@@ -17,6 +17,9 @@ namespace Platformer.Mechanics
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
+        protected float _currentGravity = 0;
+
+        
 
         /// <summary>
         /// Max horizontal speed of the player.
@@ -25,7 +28,7 @@ namespace Platformer.Mechanics
         /// <summary>
         /// Initial jump velocity at the start of a jump.
         /// </summary>
-        public float jumpTakeOffSpeed = 7;
+        public float jumpTakeOffSpeed = 45;
 
         public JumpState jumpState = JumpState.Grounded;
         private bool stopJump;
@@ -108,6 +111,15 @@ namespace Platformer.Mechanics
             // 首先起跳应该是个瞬时行为吧
             // 如果在地上，起跳
             Debug.Log(IsGrounded);
+            if (jumpState == JumpState.Landed || jumpState == JumpState.Grounded)
+            {
+                animator.SetBool("Jump", false);
+            }
+            else
+            {
+                animator.SetBool("Jump", true);
+            }
+
             if (jump && IsGrounded)
             {
                 velocity.y = jumpTakeOffSpeed * model.jumpModifier;
@@ -118,8 +130,25 @@ namespace Platformer.Mechanics
                     //Debug.Log(model.gForce * gravityModifier);
                     //velocity.y = velocity.y * model.jumpDeceleration;
                     //velocity.y -= 0.5f * model.gForce * gravityModifier* Time.deltaTime * Time.deltaTime;
-                    velocity.y -= gravityModifier * Time.deltaTime;
+                    //velocity.y -= gravityModifier * Time.deltaTime;
                     // 这个地方应该用个重力模型吧？
+                    _currentGravity = model.Gravity;
+                    if (velocity.y > 0)
+                    {
+                        _currentGravity = _currentGravity / model.AscentMultiplier;
+                    }
+                    if (velocity.y < 0)
+                    {
+                        _currentGravity = _currentGravity * model.FallMultiplier;
+                    }
+                    
+                    //if (_gravityActive)
+                    {
+                        //velocity.y += (_currentGravity + _movingPlatformCurrentGravity) * Time.deltaTime;
+                        velocity.y += (_currentGravity + 0.0f) * Time.deltaTime;
+                    }
+                    
+                    
                 //}
             }
 
