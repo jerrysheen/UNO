@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Gameplay;
@@ -110,7 +111,7 @@ namespace Platformer.Mechanics
             // 这个计算貌似不太好， 替掉
             // 首先起跳应该是个瞬时行为吧
             // 如果在地上，起跳
-            Debug.Log(IsGrounded);
+            //Debug.Log(IsGrounded);
             if (jumpState == JumpState.Landed || jumpState == JumpState.Grounded)
             {
                 animator.SetBool("Jump", false);
@@ -178,6 +179,12 @@ namespace Platformer.Mechanics
             Jumping,
             InFlight,
             Landed
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            
+            Debug.Log("Trigger : " + other.gameObject.name);
         }
     }
 }
