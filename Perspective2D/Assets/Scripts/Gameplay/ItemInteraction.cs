@@ -31,7 +31,6 @@ public class ItemInteraction : MonoBehaviour
     {
         if (m_state == TriggerState.Interact)
         {
-            OperateUI(true);
             DetermineInteract();
         }
     }
@@ -50,17 +49,32 @@ public class ItemInteraction : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    {   
+    {
         if (!other.CompareTag("Player")) return;
+        Debug.Log("Collide!");
         m_state = TriggerState.Interact;
-
+        switch (type)
+        {
+            case ItemBase.ItemType.COIN: 
+                OperateUI(true);
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
         m_state = TriggerState.Leave;
-        OperateUI(false);
+        switch (type)
+        {
+            case ItemBase.ItemType.COIN: 
+                OperateUI(false);
+                break;
+            default:
+                break;
+        }
     }
 
     private void HideItem()

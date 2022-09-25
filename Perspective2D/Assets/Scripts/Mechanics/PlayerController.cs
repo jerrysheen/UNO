@@ -19,7 +19,7 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
         protected float _currentGravity = 0;
-
+        public ParticleSystem m_particle;
         
 
         /// <summary>
@@ -53,6 +53,13 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            m_particle = this.transform.Find("DustParticles")?.GetComponent<ParticleSystem>();
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            m_particle.gameObject.SetActive(false);
         }
 
         protected override void Update()
@@ -60,6 +67,15 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = Input.GetAxis("Horizontal");
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    animator.SetBool("Attack",true);
+                }
+                else if (Input.GetButtonUp("Fire1"))
+                {
+                    animator.SetBool("Attack", false);
+                }
+
                 if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
                     jumpState = JumpState.PrepareToJump;
                 else if (Input.GetButtonUp("Jump"))
@@ -119,6 +135,7 @@ namespace Platformer.Mechanics
             else
             {
                 animator.SetBool("Jump", true);
+                m_particle.gameObject.SetActive(false);
             }
 
             if (jump && IsGrounded)
@@ -153,22 +170,35 @@ namespace Platformer.Mechanics
                 //}
             }
 
-            if (move.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (move.x < -0.01f)
-                spriteRenderer.flipX = true;
+
+
 
             //animator.SetBool("grounded", IsGrounded);
             //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             if (move == Vector2.zero)
             {
                 animator.SetBool("Walk", false);
+                m_particle.gameObject.SetActive(false);
+
             }
             else
             {
                 animator.SetBool("Walk", true);
+                m_particle.gameObject.SetActive(true);
             }
-
+            
+            // flip
+            if (move.x > 0.01f)
+            {
+                spriteRenderer.flipX = false;
+                m_particle.gameObject.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            }
+            else if (move.x < -0.01f)
+            {
+                spriteRenderer.flipX = true;
+                m_particle.gameObject.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+            
             targetVelocity = move * maxSpeed;
         }
 
@@ -184,7 +214,7 @@ namespace Platformer.Mechanics
         private void OnTriggerEnter2D(Collider2D other)
         {
             
-            Debug.Log("Trigger : " + other.gameObject.name);
+//            Debug.Log("Trigger : " + other.gameObject.name);
         }
     }
 }
