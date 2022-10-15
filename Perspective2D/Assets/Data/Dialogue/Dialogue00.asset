@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347724680857a394e95d262375349711, type: 3}
   m_Name: Dialogue00
   m_EditorClassIdentifier: 
+  npcNameA: Boy
+  npcNameB: Girl
   characterASprite: {fileID: 21300000, guid: a9ec2267ea71f6046b801ea07b1fc41f, type: 3}
   characterBSprite: {fileID: 21300000, guid: 7532085c86843774182861f63b54c7a5, type: 3}
   conversations:
