@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347724680857a394e95d262375349711, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  npcNameA: AAA
+  npcNameB: AAA
+  characterASprite: {fileID: 21300000, guid: a9ec2267ea71f6046b801ea07b1fc41f, type: 3}
+  characterBSprite: {fileID: 21300000, guid: 7532085c86843774182861f63b54c7a5, type: 3}
+  conversations:
+  - words: 11111
+    owners: 0
+  - words: 111122222222222
+    owners: 0
+  - words: 33333333333333
+    owners: 0
+  - words: 44444444444444444
+    owners: 0
+  - words: 5555555555555555555
+    owners: 0
+  - words: 333333333333333333333
+    owners: 0
+  - words: 444444444444444444444
+    owners: 0
+  - words: 222222222222222222
+    owners: 0
+  - words: 33333333333333333333333
+    owners: 0
+  - words: 111111111111111111111
+    owners: 0
