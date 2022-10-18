@@ -5,43 +5,26 @@ using PuzzleSolver;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public abstract class StoreManager :  SingletonMono<StoreManager>
+namespace StoryManagement
 {
-    
-}
-
-public abstract class Story
-{
-    public GoalsContainer goals;
-    // Start is called before the first frame update
-    public string currGoalName;
-    public string currGoalIndex;
-    private List<PuzzleSolver.GoalsContainer> currSceneGoals;
-    private int currIndex;
-
-    public string nextSceneName;
-    void Start()
+    public class StoryManager :  SingletonMono<StoryManager>
     {
-        currSceneGoals = new List<GoalsContainer>();
-        currIndex = 0;
-    }
+        public Dictionary<string, int> StoryContainer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public virtual void NextGoal(int currGoal)
-    {
-        if (currGoal != currIndex) return;
-        currIndex++;
-        if (currIndex >= currSceneGoals.Count)
+        protected override void Awake()
         {
-            SceneManager.LoadScene(nextSceneName);
+            base.Awake();
+            StoryContainer = new Dictionary<string, int>();
+        }
+    } 
+    public abstract class Story
+    {
+        public int currStoryLine;
+        public string nextSceneName;
+        public virtual void GoToNext(int curr, int next)
+        {
+            if (curr == currStoryLine) currStoryLine = next;
         }
 
     }
-    
-    // 每一个自己的scene里面，用一些简单的控制函数去一个个控制着走下去。
 }
