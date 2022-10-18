@@ -50,6 +50,10 @@ Shader "ST/UI/RimLight"
                 float4  positionCS  : SV_POSITION;
                 half4   color       : COLOR;
                 float2	uv          : TEXCOORD0;
+                float2	uv1          : TEXCOORD2;
+                float2	uv2          : TEXCOORD3;
+                float2	uv3          : TEXCOORD4;
+                float2	uv4          : TEXCOORD5;
                 half2	lightingUV  : TEXCOORD1;
                 UNITY_VERTEX_OUTPUT_STEREO
             };
@@ -89,6 +93,10 @@ Shader "ST/UI/RimLight"
 
                 o.positionCS = TransformObjectToHClip(v.positionOS);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv1 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(-0.01, 0);
+                o.uv2 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0.01, 0);
+                o.uv3 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, -0.01);
+                o.uv4 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, 0.01);
                 float4 clipVertex = o.positionCS / o.positionCS.w;
                 o.lightingUV = ComputeScreenPos(clipVertex).xy;
                 o.color = v.color;
@@ -100,8 +108,24 @@ Shader "ST/UI/RimLight"
             half4 CombinedShapeLightFragment(Varyings i) : SV_Target
             {
                 half4 main = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                half4 main1 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv1);
+                half4 main2 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv2);
+                half4 main3 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv3);
+                half4 main4 = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv4);
+                //return main1 + main;
+                //half totalAlpha = 1.0;
+                //totalAlpha = saturate(step(1.0,(main1.a + main2.a + main3.a + main4.a)));
+                //return (totalAlpha) * half4(0.0, 1.0, 1.0, 1.0) * main;
                 //half4 mask = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, i.uv);
                 //return CombinedShapeLightShared(main, mask, i.lightingUV);
+
+
+                float sum = main1.a + main2.a + main3.a + main4.a;
+                float outline = min(sum, 1.0);
+                half4 line_color = half4(0.0, 1.0, 1.0, 1.0);
+                
+                half4 res = lerp(main, line_color, outline - main.a);
+                return res;
                 if (main.a == 0.0)
 		        discard;
                 return _Color;
