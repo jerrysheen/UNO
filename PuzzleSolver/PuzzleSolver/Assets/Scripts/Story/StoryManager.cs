@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SystemManager;
@@ -11,9 +12,45 @@ namespace StoryManagement
     {
         public Dictionary<string, Story> storyContainer;
 
+        /// <summary>
+        ///  这个地方不去管他是第几个场景， 因为默认每个ui脚本只会在自己这个场景里面运行。
+        /// 过了这个场景就销毁
+        /// </summary>
+        public static event Action<int> onGameStateChanged;
+
+        public Story currStory = null;
+        
+        /// <summary>
+        /// totalStoryLine 会比enum多一个，因为会多一个start
+        /// </summary>
+        /// <param name="next"></param>
+        public void GoToNext(int next)
+        {
+            //if (curr == currStoryLine) currStoryLine = next;
+
+            if (currStory.currStoryLine == next - 1)
+            {
+                currStory.currStoryLine = next;
+            }
+            if (currStory.TotalStoryLineNum < next)
+            {
+                GoToNextScene(currStory.nextSceneName);
+                // story 根据场景注册，每次新场景加载完之后判断，如果是null的话就给新值。
+                currStory = null;
+            }
+            
+            onGameStateChanged.Invoke(next);
+        }
+
+        public void GoToNextScene(string nextScene)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+
         protected override void Awake()
         {
             base.Awake();
+            currStory = null;
             storyContainer = new Dictionary<string, Story>();
         }
 
@@ -41,11 +78,11 @@ namespace StoryManagement
     public abstract class Story : MonoBehaviour
     {
         public int currStoryLine;
+        public int TotalStoryLineNum;
+        public string currSceneName;
         public string nextSceneName;
-        public virtual void GoToNext(int curr, int next)
-        {
-            if (curr == currStoryLine) currStoryLine = next;
-        }
+        public string currStoryClassName;
+        public string nextStoryClassName;
 
     }
 }

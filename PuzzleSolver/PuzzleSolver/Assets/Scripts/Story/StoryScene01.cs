@@ -19,10 +19,6 @@ namespace StoryManagement
     public class StoryScene01 : Story
     {
         public StoryLine01 currState = StoryLine01.Start;
-        public override void GoToNext(int curr, int next)
-        {
-            base.GoToNext(curr, next);
-        }
 
         private void Start()
         {
@@ -34,10 +30,27 @@ namespace StoryManagement
             else
             {
                 storyManager.AddNewStory<StoryScene01>();
+                if (!storyManager.currStory)
+                {
+                    storyManager.currStory = this;
+                }
             }
-
             currState = StoryLine01.Start;
+            TotalStoryLineNum = StoryLine01.GetNames(typeof(StoryLine01)).Length;
+            
+            StoryManager.onGameStateChanged += onGameStateChange;
         }
+        
+        private void onGameStateChange(int obj)
+        {
+            currState = (StoryLine01) obj;
+        }
+
+        private void OnDestroy()
+        {
+            StoryManager.onGameStateChanged -= onGameStateChange;
+        }
+
     }
     
 }

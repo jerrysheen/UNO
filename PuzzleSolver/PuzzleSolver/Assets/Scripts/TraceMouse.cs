@@ -17,6 +17,18 @@ public class TraceMouse : MonoBehaviour
     void Update()
     {
         ClickScreen();
+        FollowMouse();
+    }
+
+    private void FollowMouse()
+    {
+        RectTransform rectTrans = GetComponent<RectTransform>();
+        this.transform.position = Input.mousePosition;
+        // Vector2 pos;
+        // GameObject myCanvas = GameObject.Find("Canvas");
+        // Camera cam = Camera.current;;
+        //     RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, cam, out pos);
+        // transform.position = myCanvas.transform.TransformPoint(pos);
     }
 
     private void ClickScreen()

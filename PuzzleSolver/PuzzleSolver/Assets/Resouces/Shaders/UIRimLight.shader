@@ -2,7 +2,8 @@ Shader "ST/UI/RimLight"
 {
     Properties
     {
-        _Color("Tint", Color) = (1,1,1,1)
+        _Color("Color", Color) = (1,1,1,1)
+        _BorderSize ("Border Size", Range(0.0, 0.01)) = 0.01
         _MainTex("Diffuse", 2D) = "white" {}
         //_MaskTex("Mask", 2D) = "white" {}
         //_NormalMap("Normal Map", 2D) = "bump" {}
@@ -69,6 +70,7 @@ Shader "ST/UI/RimLight"
             half4 _MainTex_ST;
             half4 _NormalMap_ST;
             half4 _Color;
+            half _BorderSize;
             #if USE_SHAPE_LIGHT_TYPE_0
             SHAPE_LIGHT(0)
             #endif
@@ -93,10 +95,10 @@ Shader "ST/UI/RimLight"
 
                 o.positionCS = TransformObjectToHClip(v.positionOS);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                o.uv1 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(-0.01, 0);
-                o.uv2 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0.01, 0);
-                o.uv3 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, -0.01);
-                o.uv4 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, 0.01);
+                o.uv1 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(_BorderSize, 0);
+                o.uv2 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(-_BorderSize, 0);
+                o.uv3 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, -_BorderSize);
+                o.uv4 = v.uv * _MainTex_ST.xy + _MainTex_ST.zw + half2(0, _BorderSize);
                 float4 clipVertex = o.positionCS / o.positionCS.w;
                 o.lightingUV = ComputeScreenPos(clipVertex).xy;
                 o.color = v.color;
@@ -122,7 +124,7 @@ Shader "ST/UI/RimLight"
 
                 float sum = main1.a + main2.a + main3.a + main4.a;
                 float outline = min(sum, 1.0);
-                half4 line_color = half4(0.0, 1.0, 1.0, 1.0);
+                half4 line_color = _Color;
                 
                 half4 res = lerp(main, line_color, outline - main.a);
                 return res;

@@ -200,6 +200,8 @@ GameObject:
   - component: {fileID: 168842273}
   - component: {fileID: 168842276}
   - component: {fileID: 168842275}
+  - component: {fileID: 168842274}
+  - component: {fileID: 168842277}
   m_Layer: 5
   m_Name: Cinnabar
   m_TagString: Untagged
@@ -226,6 +228,19 @@ RectTransform:
   m_AnchoredPosition: {x: 1598, y: -378}
   m_SizeDelta: {x: 169.56042, y: 147}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &168842274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168842272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replaceSprite: {fileID: 3559581206890306106, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
 --- !u!114 &168842275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3559581206890306106, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
+  m_Sprite: {fileID: -9052037258455230877, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -264,6 +279,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168842272}
   m_CullTransparentMesh: 1
+--- !u!60 &168842277
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168842272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 168.96582, y: -52.94953}
+      - {x: 163.55707, y: -72.05529}
+      - {x: 155.19604, y: -110.032455}
+      - {x: 130.6134, y: -135.91196}
+      - {x: 104.86261, y: -142.6077}
+      - {x: 50.8974, y: -139.40588}
+      - {x: 9.24353, y: -103.807434}
+      - {x: 3.0279474, y: -67.33503}
+      - {x: 17.034224, y: -33.541943}
+      - {x: 29.410357, y: -16.170116}
+      - {x: 82.5116, y: -3.9276733}
+      - {x: 147.844, y: -18.015339}
 --- !u!1 &289537694
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +707,7 @@ GameObject:
   - component: {fileID: 1140968061}
   - component: {fileID: 1140968059}
   - component: {fileID: 1140968060}
+  - component: {fileID: 1140968062}
   m_Layer: 5
   m_Name: Finger
   m_TagString: Untagged
@@ -713,7 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9052037258455230877, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
+  m_Sprite: {fileID: -1319951409963917643, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -731,6 +784,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140968057}
   m_CullTransparentMesh: 1
+--- !u!114 &1140968062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140968057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5af4e806d6b886b4cbe386e0a85e8ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replaceSprite: {fileID: 389069653919878483, guid: b55550d69797ca742b6a79bd6c1382b2, type: 3}
 --- !u!1 &1289063139
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc319eaee477924dbff1f3ac800fd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currStory: {fileID: 0}
 --- !u!4 &1526504418
 Transform:
   m_ObjectHideFlags: 0
@@ -994,5 +1061,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currStoryLine: 0
+  TotalStoryLineNum: 0
+  currSceneName: 
   nextSceneName: 
+  currStoryClassName: 
+  nextStoryClassName: 
   currState: 0
