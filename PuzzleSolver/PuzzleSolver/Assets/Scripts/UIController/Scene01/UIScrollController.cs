@@ -51,7 +51,7 @@ public class UIScrollController : UIControllBase
         if ((StoryLine01) StoryManager.getInstance.currStory.currStoryLine == StoryLine01.Start)
         {
             m_scrollAnimator.SetTrigger("Scroll");
-            StoryManager.getInstance.GoToNext((int) StoryLine01.Click_Cinnabar);
+            StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
         }
     }
 }

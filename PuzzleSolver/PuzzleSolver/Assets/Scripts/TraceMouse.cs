@@ -23,12 +23,11 @@ public class TraceMouse : MonoBehaviour
     private void FollowMouse()
     {
         RectTransform rectTrans = GetComponent<RectTransform>();
-        this.transform.position = Input.mousePosition;
-        // Vector2 pos;
-        // GameObject myCanvas = GameObject.Find("Canvas");
-        // Camera cam = Camera.current;;
-        //     RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, cam, out pos);
-        // transform.position = myCanvas.transform.TransformPoint(pos);
+        
+        // z 表示距离相机的距离
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
+        this.transform.position = worldPosition;
+
     }
 
     private void ClickScreen()

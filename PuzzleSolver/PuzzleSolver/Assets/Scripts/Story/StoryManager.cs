@@ -24,22 +24,29 @@ namespace StoryManagement
         /// totalStoryLine 会比enum多一个，因为会多一个start
         /// </summary>
         /// <param name="next"></param>
-        public void GoToNext(int next)
+        public void ValiDateState(int curr)
         {
             //if (curr == currStoryLine) currStoryLine = next;
 
-            if (currStory.currStoryLine == next - 1)
+            if (currStory.currStoryLine == curr - 1)
             {
-                currStory.currStoryLine = next;
+                currStory.currStoryLine = curr;
             }
-            if (currStory.TotalStoryLineNum < next)
+            if (currStory.TotalStoryLineNum == curr + 1)
             {
-                GoToNextScene(currStory.nextSceneName);
+                StartCoroutine(Wait(3.0f));
                 // story 根据场景注册，每次新场景加载完之后判断，如果是null的话就给新值。
-                currStory = null;
+                
             }
             
-            onGameStateChanged.Invoke(next);
+            onGameStateChanged.Invoke(curr);
+        }
+        
+        IEnumerator Wait(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            GoToNextScene(currStory.nextSceneName);
+            currStory = null;
         }
 
         public void GoToNextScene(string nextScene)
