@@ -10,7 +10,7 @@ public class UICinnabarController : UIControllBase
 {
     // Start is called before the first frame update
     //private Animator m_scrollAnimator;
-    public Sprite replaceSprite;
+    //public Sprite replaceSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +53,7 @@ public class UICinnabarController : UIControllBase
         //m_scrollAnimator.SetTrigger("Scroll");
         if ((StoryLine01) StoryManager.getInstance.currStory.currStoryLine == StoryLine01.Click_Scroll)
         {
-            this.GetComponent<Image>().sprite = replaceSprite;
+            //  this.GetComponent<Image>().sprite = replaceSprite;
             StoryManager.getInstance.ValiDateState((int)StoryLine01.Click_Cinnabar);
         }
         

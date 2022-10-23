@@ -28,7 +28,7 @@ namespace StoryManagement
         {
             //if (curr == currStoryLine) currStoryLine = next;
 
-            if (currStory.currStoryLine == curr - 1)
+            if (currStory.currStoryLine == curr - 1 || currStory.currStoryLine == 0)
             {
                 currStory.currStoryLine = curr;
             }
@@ -39,7 +39,7 @@ namespace StoryManagement
                 
             }
             
-            onGameStateChanged.Invoke(curr);
+            onGameStateChanged?.Invoke(curr);
         }
         
         IEnumerator Wait(float waitTime)

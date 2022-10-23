@@ -10,7 +10,7 @@ public class UIStampController : UIControllBase
 {
     // Start is called before the first frame update
     //private Animator m_scrollAnimator;
-    public Sprite replaceSprite;
+    //public Sprite replaceSprite;
     public Sprite original;
     private Image m_image;
     public float showTime = 2.0f;
@@ -37,10 +37,10 @@ public class UIStampController : UIControllBase
         switch (curr)
         {
             case StoryLine01.Click_Scroll:
-                StartCoroutine(Wait(showTime, original));
+                //StartCoroutine(Wait(showTime, original));
                 break;
             case StoryLine01.Leave_FingerPrint:
-                StartCoroutine(Wait(showTimeRed, replaceSprite));
+                //StartCoroutine(Wait(showTimeRed, replaceSprite));
                 break;
         }
     }
