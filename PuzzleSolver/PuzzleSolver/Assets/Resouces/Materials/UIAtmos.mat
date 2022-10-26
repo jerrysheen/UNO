@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BorderSize: -0.16
+    - _BorderSize: 0.1
     - _EnableExternalAlpha: 0
     m_Colors:
     - _Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
