@@ -22,7 +22,7 @@ public class UICinnabarController : UIControllBase
 
     private void onGameStateChange(int obj)
     {
-        Debug.Log("State Change! ");
+        Debug.Log("State Change! to");
     }
 
     private void OnDestroy()

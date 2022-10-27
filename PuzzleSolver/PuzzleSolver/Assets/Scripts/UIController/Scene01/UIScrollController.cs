@@ -9,6 +9,10 @@ public class UIScrollController : UIControllBase
 {
     // Start is called before the first frame update
     private Animator m_scrollAnimator;
+
+    public float TimeCountDown;
+    public float delayTime;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +52,11 @@ public class UIScrollController : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if ((StoryLine01) StoryManager.getInstance.currStory.currStoryLine == StoryLine01.Start)
-        {
-            m_scrollAnimator.SetTrigger("Scroll");
-            StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
-        }
+        m_scrollAnimator.SetTrigger("Scroll");
+        StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
+
+
     }
+    
+
 }
