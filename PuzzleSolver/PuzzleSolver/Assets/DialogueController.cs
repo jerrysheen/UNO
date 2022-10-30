@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using StoryManagement;
@@ -12,16 +13,24 @@ public class DialogueController : MonoBehaviour
     public GameObject dialogue;
     public GameObject text;
     private bool shouldStartCountDown;
-    public float countDownTime = 5.0f;
     public float DelayToShowTime = 3.0f;
+    public float DelayDisableTime = 3.0f;
     private float countdown;
-
-    public float blinkSpeed = 1.0f;
+    public float gotoNextStoryLineThreash;
+    public bool needSendGotoNextInfo;
+    public float blinkSpeed = .3f;
+    public float blinkMaxTime = 5.0f;
     private float isMinus = 1.0f;
+
+    private void OnEnable()
+    {
+        StoryManager.onGameStateChanged += onGameStateChange;
+    }
+
     void Start()
     {
 
-        StoryManager.onGameStateChanged += onGameStateChange;
+        
         shouldStartCountDown = false;
         countdown = 0.0f;
         dialogue = this.transform.Find("Dialogue").gameObject;
@@ -36,37 +45,54 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-        if (shouldStartCountDown)
-        {
-            dialogue.SetActive(true);
-            countdown += Time.deltaTime * blinkSpeed;
-            dialogueShowMat.SetFloat("_ReadSpeed", countdown);
-        }
-
-
+        
     }
 
     private void onGameStateChange(int obj)
     {
-        if (reactToProcessIndex == obj)
+        if (reactToProcessIndex == obj )
         {
-            StartCoroutine(DelayTime(DelayToShowTime));
+            StartCoroutine(DelayTime(DelayToShowTime, DelayDisableTime));
             
         }
         else
         {
+            dialogue.SetActive(false);
         }
 
         Debug.Log("State Change! ");
     }
     
-    IEnumerator DelayTime (float time)
+    IEnumerator DelayTime (float beforeShowtime, float disableDelay)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(beforeShowtime);
         shouldStartCountDown = true;
+        
+        // show dialogue:
+        dialogue.SetActive(true);
+        while (countdown < blinkMaxTime){
+            countdown += Time.deltaTime * blinkSpeed;
+            //Debug.Log(countdown);
+            dialogueShowMat.SetFloat("_ReadSpeed", countdown);
+            yield return null;
+        }
+
+        float currCountDown = countdown;
+        // disable
+        while (countdown  < currCountDown + disableDelay)
+        {
+//            Debug.Log(countdown);
+            countdown += Time.deltaTime;
+            yield return null;
+        }
+        dialogue.SetActive(false);
+        if (needSendGotoNextInfo && StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex)
+        {
+            StoryManager.getInstance.ValiDateState((int)reactToProcessIndex + 1);
+        }
     }
     
-    private void OnDestroy()
+    private void OnDisable()
     {
         StoryManager.onGameStateChanged -= onGameStateChange;
     }

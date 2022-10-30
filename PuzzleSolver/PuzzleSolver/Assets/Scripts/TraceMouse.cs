@@ -33,9 +33,13 @@ public class TraceMouse : MonoBehaviour
     private void ClickScreen()
     {
         //this.transform.position = Input.mousePosition;
-        Ray ray = Camera.main.ScreenPointToRay ( new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f) );
+        Ray ray = Camera.main.ScreenPointToRay ( new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f) );
         //Debug.Log(ray);
         RaycastHit2D hit2D = Physics2D.GetRayIntersection ( ray );
+        if (Physics.Raycast(Camera.main.transform.position, ray.direction, 10000))
+        {
+            print("There is something in front of the object!");
+        }
 
         if (hit2D.collider != null && Input.GetMouseButtonDown(0))
         {

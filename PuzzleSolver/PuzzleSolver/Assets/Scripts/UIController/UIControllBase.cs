@@ -25,13 +25,13 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log(this.gameObject.name + " Pressed!");
+        Debug.Log(this.gameObject.name + " Pressed!");
         //throw new System.NotImplementedException();
     }
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
-        //Debug.Log(this.gameObject.name + " Released!");
+        Debug.Log(this.gameObject.name + " Released!");
         //throw new System.NotImplementedException();
     }
 }

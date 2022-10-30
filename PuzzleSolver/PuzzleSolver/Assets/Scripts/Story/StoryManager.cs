@@ -19,7 +19,6 @@ namespace StoryManagement
         public static event Action<int> onGameStateChanged;
 
         public Story currStory = null;
-        
         /// <summary>
         /// totalStoryLine 会比enum多一个，因为会多一个start
         /// </summary>
@@ -28,19 +27,37 @@ namespace StoryManagement
         {
             //if (curr == currStoryLine) currStoryLine = next;
 
-            if (currStory.currStoryLine == curr - 1 || currStory.currStoryLine == 0)
-            {
+            // 提交验证由本地去完成。
+            Debug.LogError(curr);
                 currStory.currStoryLine = curr;
-            }
+                onGameStateChanged?.Invoke(curr);
+
+                if (currStory.taskToDo != null && currStory.taskToDo.Count == currStory.TotalStoryLineNum)
+                {
+                    // 验证的时候， 表示上一个场景已经完成了， 这个场景正在期待完成
+                    var index = curr == 0 ? 0 : curr - 1;
+                    currStory.taskToDo[index] = 1;
+                }
+                
+
             if (currStory.TotalStoryLineNum == curr + 1)
             {
                 StartCoroutine(Wait(3.0f));
                 // story 根据场景注册，每次新场景加载完之后判断，如果是null的话就给新值。
-                
             }
-            
+
+        }
+        
+        public void ValiDateCurrent(int curr)
+        {
+            //if (curr == currStoryLine) currStoryLine = next;
+
+            // 提交验证由本地去完成。
+            currStory.currStoryLine = curr;
+            StoryManager.getInstance.currStory.taskToDo[curr] = 1;
             onGameStateChanged?.Invoke(curr);
         }
+        
         
         IEnumerator Wait(float waitTime)
         {
@@ -90,6 +107,8 @@ namespace StoryManagement
         public string nextSceneName;
         public string currStoryClassName;
         public string nextStoryClassName;
+        public List<int> taskToDo;
+
 
     }
 }

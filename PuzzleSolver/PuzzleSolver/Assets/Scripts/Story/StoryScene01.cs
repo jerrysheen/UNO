@@ -37,6 +37,7 @@ namespace StoryManagement
             }
             currState = StoryLine01.Start;
             TotalStoryLineNum = StoryLine01.GetNames(typeof(StoryLine01)).Length;
+
             StoryManager.getInstance.ValiDateState((int)currState);
             StoryManager.onGameStateChanged += onGameStateChange;
         }

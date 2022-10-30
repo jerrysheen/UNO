@@ -53,7 +53,11 @@ public class UIScrollController : UIControllBase
     {
         base.OnClicked();
         m_scrollAnimator.SetTrigger("Scroll");
-        StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
+        if (StoryManager.getInstance.currStory.currStoryLine == (int) StoryLine01.Click_Scroll - 1)
+        {
+            StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
+        }
+
 
 
     }

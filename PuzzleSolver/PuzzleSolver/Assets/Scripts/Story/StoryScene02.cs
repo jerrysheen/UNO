@@ -10,6 +10,13 @@ namespace StoryManagement
     public enum StoryLine02
     {
         Start = 0,
+        PlayDialogue = 1,
+        DisableCharacter = 2,
+        ClickMirror00 = 3,
+        ClickMirror01 = 4,
+        ClickMirror02 = 5,
+        Mirror_Crack = 6,
+        TransToNext = 7,
     }
 
     public class StoryScene02 : Story
