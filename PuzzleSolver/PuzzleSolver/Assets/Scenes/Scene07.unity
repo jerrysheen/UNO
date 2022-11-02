@@ -1133,8 +1133,8 @@ RectTransform:
   - {fileID: 517039689}
   - {fileID: 2101752651}
   - {fileID: 56768713}
-  - {fileID: 1610253380}
   - {fileID: 1924404026}
+  - {fileID: 1610253380}
   - {fileID: 1284206377}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1221,6 +1221,7 @@ MonoBehaviour:
   nextSceneName: Scene05
   currStoryClassName: StoryScene04
   nextStoryClassName: StoryScene05
+  taskToDo: 
   currState: 0
 --- !u!1 &1457476369
 GameObject:
@@ -1300,11 +1301,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1377092578}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -342.30286, y: -356.60425}
+  m_AnchoredPosition: {x: -335, y: -366}
   m_SizeDelta: {x: -1375.1646, y: -713.2086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610253381
@@ -1319,7 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 29ddbe7ef7e2825469346d11d5bf6b46, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1510,7 +1511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1924404026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1523,11 +1524,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1377092578}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -532.1699, y: -342.07806}
+  m_AnchoredPosition: {x: -537, y: -386}
   m_SizeDelta: {x: -1064.3, y: -684.1566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924404027

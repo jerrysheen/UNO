@@ -12,6 +12,7 @@ public class DialogueController : MonoBehaviour
     public Material dialogueShowMat;
     public GameObject dialogue;
     public GameObject text;
+    public GameObject text01;
     private bool shouldStartCountDown;
     public float DelayToShowTime = 3.0f;
     public float DelayDisableTime = 3.0f;
@@ -35,6 +36,7 @@ public class DialogueController : MonoBehaviour
         countdown = 0.0f;
         dialogue = this.transform.Find("Dialogue").gameObject;
         text = dialogue.transform.Find("Text").gameObject;
+        //text01 = dialogue.transform.Find("");
         if (!dialogue)
         {
             Debug.LogError("please assign obj first");
@@ -52,8 +54,7 @@ public class DialogueController : MonoBehaviour
     {
         if (reactToProcessIndex == obj )
         {
-            StartCoroutine(DelayTime(DelayToShowTime, DelayDisableTime));
-            
+            DisplayDialogue();
         }
         else
         {
@@ -62,7 +63,12 @@ public class DialogueController : MonoBehaviour
 
         Debug.Log("State Change! ");
     }
-    
+
+    public void DisplayDialogue()
+    {
+        StartCoroutine(DelayTime(DelayToShowTime, DelayDisableTime));
+    }
+
     IEnumerator DelayTime (float beforeShowtime, float disableDelay)
     {
         yield return new WaitForSeconds(beforeShowtime);

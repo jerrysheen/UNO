@@ -10,8 +10,14 @@ namespace StoryManagement
     public enum StoryLine04
     {
         Start = 0,
-        Click_Door = 1,
-        PopUp_Dialogue = 2,
+        Click_ButterPlay = 1,
+        ClickCage = 2,
+        ClickStep = 3,
+        ClickStick = 4,
+        DragBrick = 5,
+        ButterFly_Flyway = 6,
+        Charecter_Move = 7,
+        End_Scene
         
     }
 

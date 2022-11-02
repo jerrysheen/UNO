@@ -16,6 +16,7 @@ Shader "ST/UI/Dialogue"
         [HideInInspector] _Flip("Flip", Vector) = (1,1,1,1)
         [HideInInspector] _AlphaTex("External Alpha", 2D) = "white" {}
         [HideInInspector] _EnableExternalAlpha("Enable External Alpha", Float) = 0
+        _ReadSpeed("_ReadSpeed", Float) = 0
     }
 
     HLSLINCLUDE
