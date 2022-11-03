@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &25226275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &198425206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +631,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198425203}
   m_CullTransparentMesh: 1
+--- !u!1 &251004261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6703428176571558234, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
+  m_PrefabInstance: {fileID: 2077297103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &251004262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
+  m_PrefabInstance: {fileID: 2077297103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &251004263
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251004261}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 36d6b502812bb5b4080dd6249a098202, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 36d6b502812bb5b4080dd6249a098202, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &338327668
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &338327671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9cde8dbec9cb14bb3ca536f191d14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 0}
@@ -886,6 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &418669583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1830,6 +1861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515b7444c538f8842b57f9a1db8619dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   showObj: {fileID: 0}
   showObjName: Show
   needShow: 1
@@ -1887,6 +1919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29af6528e68d76549ab85f85e5a32429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   reactToProcessIndex: 1
   original: {fileID: 0}
   hint: {fileID: 0}
@@ -2475,6 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &1643777454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &1860301230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3058,31 +3093,31 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2128552650}
     m_Modifications:
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -683
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -733
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 271.03946
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3090,15 +3125,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -9002438438378576329, guid: bd9cc68d03efa9c44b42c53c319ec1ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3191,6 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9cde8dbec9cb14bb3ca536f191d14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 0}
@@ -3275,6 +3311,37 @@ CapsuleCollider2D:
   m_Offset: {x: -266.42, y: -384.75}
   m_Size: {x: 327.7, y: 157.9}
   m_Direction: 1
+--- !u!1 &2128552649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128552650}
+  m_Layer: 0
+  m_Name: CharecterMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2128552650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128552649}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 619.29584, y: -247.79124, z: -271.03946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 251004262}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140097707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,7 +3360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &2140097708
 Animator:
   serializedVersion: 3
@@ -3356,6 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515b7444c538f8842b57f9a1db8619dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   showObj: {fileID: 0}
   showObjName: Riggings
   needShow: 0

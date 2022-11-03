@@ -39,12 +39,12 @@ public class UIDragable : UIControllBase
 
         triggerDrag = false;
 
-        idleObj = this.transform.Find("Idle").gameObject;
-        moveObj = this.transform.Find("Move").gameObject;
+        if(idleObj)idleObj = this.transform.Find("Idle").gameObject;
+        if(moveObj)moveObj = this.transform.Find("Move").gameObject;
         
-        if(!idleObj || ! moveObj) Debug.LogError("Please assign obj");
-        idleObj.SetActive(true);
-        moveObj.SetActive(false);
+       // if(!idleObj || ! moveObj) Debug.LogError("Please assign obj");
+        if(idleObj)idleObj.SetActive(true);
+        if(moveObj)moveObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class UIDragable : UIControllBase
 
         if (notYetDrag)
         {
-            if (needFollow)
+            if (needFollow && idleObj && moveObj)
             {
                 var diff = followBy.rotation.eulerAngles - followRotate;
                 var currPos = idleObj.transform.rotation.eulerAngles;
@@ -125,8 +125,8 @@ public class UIDragable : UIControllBase
             if (StoryManager.getInstance.currStory.currStoryLine == i)
             {
                 triggerDrag = true;
-                idleObj.SetActive(false);
-                moveObj.SetActive(true);
+                if(idleObj)idleObj.SetActive(false);
+                if(moveObj)moveObj.SetActive(true);
                 // // z 表示距离相机的距离
                 // Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
                 // this.transform.position = worldPosition;

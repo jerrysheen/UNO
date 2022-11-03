@@ -644,28 +644,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -648, y: 2833}
-  - name: "\u53A8\u623F\u5899\u58C1"
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 1890
-      width: 2721
-      height: 935
-    spriteID: d97426b15441120428ce2127cf6da3a5
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1890}
   - name: "\u6700\u7EC8\u70D9\u997C"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -842,10 +820,32 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 309, y: 3784}
+  - name: "\u56FE\u5C42 62"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1890
+      width: 2721
+      height: 935
+    spriteID: 4280673b609cb5d4abb18ec3d4b49423
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1890}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -856,7 +856,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -867,7 +867,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Android
     overridden: 0
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1174,12 +1174,12 @@ ScriptedImporter:
     spriteID: 8c4ae3067884e0040ad41fa15f99a55d
     layerID: 61
     mosaicPosition: {x: 4, y: 2833}
-  - name: "\u53A8\u623F\u5899\u58C1"
-    spriteName: "\u53A8\u623F\u5899\u58C1"
+  - name: "\u56FE\u5C42 62"
+    spriteName: "\u56FE\u5C42 62"
     isGroup: 0
     parentIndex: -1
-    spriteID: d97426b15441120428ce2127cf6da3a5
-    layerID: 136
+    spriteID: 4280673b609cb5d4abb18ec3d4b49423
+    layerID: 296
     mosaicPosition: {x: 4, y: 1890}
   characterData:
     bones: []

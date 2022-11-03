@@ -116,10 +116,10 @@ Shader "ST/UI/OverLay"
                 //return (totalAlpha) * half4(0.0, 1.0, 1.0, 1.0) * main;
                 //half4 mask = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, i.uv);
                 //return CombinedShapeLightShared(main, mask, i.lightingUV);
-                main.r *= main.r;
-                main.g *= main.g;
-                main.b *= main.b;
-                return half4(main.xyz * _Color, 1.0);
+                // main.r *= main.r;
+                // main.g *= main.g;
+                // main.b *= main.b;
+                return half4(main.xyz * _Color, main.a);
 
             }
             ENDHLSL

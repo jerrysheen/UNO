@@ -9,6 +9,7 @@ public class ClickDisplay : UIControllBase
     //private Animator m_scrollAnimator;
     //public Sprite replaceSprite;
     public GameObject currentGameobj;
+    public string GameObjName;
     public bool startState;
     public bool onClickShow = true;
     public bool triggerOnce = true;
@@ -26,21 +27,49 @@ public class ClickDisplay : UIControllBase
         //if(m_scrollAnimator == null) Debug.LogError("Can't find Animator ！");
 
         StoryManager.onGameStateChanged += onGameStateChange;
-        currentGameobj = this.transform.Find("ClickObj").gameObject;
+        if (GameObjName == "")
+        {
+            currentGameobj = this.transform.Find("ClickObj").gameObject;
+        }
+        else
+        {
+            currentGameobj = this.transform.Find(GameObjName).gameObject;
+
+        }
+        
+
         currentGameobj.SetActive(startState);
-        this.GetComponent<CircleCollider2D>().enabled = false;
+        if (this.GetComponent<CircleCollider2D>() != null && responseStoryLineIndex != 0 && responseStoryLineIndex != -1)
+        {
+            this.GetComponent<CircleCollider2D>().enabled = false;
+        }
+        
+        if (this.GetComponent<PolygonCollider2D>() != null && responseStoryLineIndex != 0 && responseStoryLineIndex != -1)
+        {
+            this.GetComponent<PolygonCollider2D>().enabled = false;
+        }
+        
+
     }
 
     private void onGameStateChange(int obj)
     {
         // 防止影响其他点击效果
-        if (obj == responseStoryLineIndex || (responseStoryLineIndex == 1 && obj == 0))
+        if (obj == responseStoryLineIndex || (responseStoryLineIndex == 1 || obj == 0))
         {
-            this.GetComponent<CircleCollider2D>().enabled = true;
+            var Colliders = this.GetComponents<Collider>();
+            foreach (var VARIABLE in Colliders)
+            {
+                VARIABLE.enabled = true;
+            }
         }
         else
         {
-            this.GetComponent<CircleCollider2D>().enabled = false;
+            var Colliders = this.GetComponents<Collider>();
+            foreach (var VARIABLE in Colliders)
+            {
+                VARIABLE.enabled = false;
+            }
         }
     }
 
@@ -67,10 +96,13 @@ public class ClickDisplay : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if (StoryManager.getInstance.currStory.currStoryLine == responseStoryLineIndex)
+        if (StoryManager.getInstance.currStory.currStoryLine == responseStoryLineIndex || reactToLine == -1)
         {
             //  this.GetComponent<Image>().sprite = replaceSprite;
-            StoryManager.getInstance.ValiDateState(responseStoryLineIndex + 1);
+            if (reactToLine != -1)
+            {
+                StoryManager.getInstance.ValiDateState(responseStoryLineIndex + 1);
+            }
             currentGameobj.SetActive(onClickShow);
         }
         

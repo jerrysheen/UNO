@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     // Start is called before the first frame update
+    public int reactToLine = -1;
+    
     void Start()
     {
         
