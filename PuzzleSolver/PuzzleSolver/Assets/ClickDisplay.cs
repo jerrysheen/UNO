@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using StoryManagement;
@@ -52,12 +53,23 @@ public class ClickDisplay : UIControllBase
 
     }
 
+    private void OnEnable()
+    {
+        StoryManager.onGameStateChanged += onGameStateChange;
+    }
+
+    private void OnDisable()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChange;
+    }
+
+    
     private void onGameStateChange(int obj)
     {
         // 防止影响其他点击效果
         if (obj == responseStoryLineIndex || (responseStoryLineIndex == 1 || obj == 0))
         {
-            var Colliders = this.GetComponents<Collider>();
+            var Colliders = this.GetComponents<Collider2D>();
             foreach (var VARIABLE in Colliders)
             {
                 VARIABLE.enabled = true;
@@ -65,7 +77,7 @@ public class ClickDisplay : UIControllBase
         }
         else
         {
-            var Colliders = this.GetComponents<Collider>();
+            var Colliders = this.GetComponents<Collider2D>();
             foreach (var VARIABLE in Colliders)
             {
                 VARIABLE.enabled = false;

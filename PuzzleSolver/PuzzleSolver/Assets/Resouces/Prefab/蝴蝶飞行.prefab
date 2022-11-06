@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1583314703
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5780178656029348411, guid: 9be0b06a7673b914c92fbe2bca99e6d7, type: 3}
+  m_Sprite: {fileID: 6304680533165347148, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,6 +121,12 @@ MonoBehaviour:
   endOfPathInstruction: 0
   speed: 250
   reactToStoryyLine: -1
+  shouldStartToMove: 0
+  shouldGoToNextLine: 0
+  nextLineIndex: 5
+  lastPos: {x: 0, y: 0, z: 0}
+  currState: 0
+  waitToSendnewLine: 1.5
 --- !u!50 &6296187881776339895
 Rigidbody2D:
   serializedVersion: 4

@@ -15,7 +15,8 @@ public class UIStampController : UIControllBase
     private Image m_image;
     public float showTime = 2.0f;
     public float showTimeRed = 0.5f;
-
+    public GameObject showObj;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,8 @@ public class UIStampController : UIControllBase
 
         StoryManager.onGameStateChanged += onGameStateChange;
         m_image = GetComponent<Image>();
-        original = m_image.sprite;
-        var tempColor = m_image.color;
-        tempColor.a = 0.0f;
-        m_image.color = tempColor;
+        showObj = this.transform.Find("Show").gameObject;
+        showObj.SetActive(false);
     }
 
     private void onGameStateChange(int obj)
@@ -86,6 +85,7 @@ public class UIStampController : UIControllBase
         if ((StoryLine01) StoryManager.getInstance.currStory.currStoryLine == StoryLine01.Click_Cinnabar)
         {
             StoryManager.getInstance.ValiDateState((int)StoryLine01.Leave_FingerPrint);
+            showObj.SetActive(true);
         }
         
     }

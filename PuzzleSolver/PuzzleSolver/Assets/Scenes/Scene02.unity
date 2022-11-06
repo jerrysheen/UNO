@@ -169,12 +169,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactToProcessIndex: 1
   dialogueShowMat: {fileID: 0}
+  dialogueShowMat01: {fileID: 0}
   dialogue: {fileID: 1117086740}
   text: {fileID: 2101686690}
+  text01: {fileID: 0}
   DelayToShowTime: 2
   DelayDisableTime: 1
   gotoNextStoryLineThreash: 0
   needSendGotoNextInfo: 1
+  nextLineIndex: 2
   blinkSpeed: 0.2
   blinkMaxTime: 2
 --- !u!1 &92066380
@@ -670,12 +673,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactToProcessIndex: 6
   dialogueShowMat: {fileID: 0}
+  dialogueShowMat01: {fileID: 0}
   dialogue: {fileID: 391581526}
   text: {fileID: 1465408847}
+  text01: {fileID: 0}
   DelayToShowTime: 0
   DelayDisableTime: 1
   gotoNextStoryLineThreash: 2
   needSendGotoNextInfo: 1
+  nextLineIndex: 7
   blinkSpeed: 0.4
   blinkMaxTime: 3
 --- !u!1 &446336969
@@ -803,6 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &460246734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1185,7 +1192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d064dd279dc837948853bf6cfd5f9b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: 4
   currentGameobj: {fileID: 0}
+  GameObjName: ClickObj
   startState: 0
   onClickShow: 1
   triggerOnce: 1
@@ -1625,6 +1634,7 @@ MonoBehaviour:
   nextSceneName: Scene03
   currStoryClassName: StoryLine02
   nextStoryClassName: StoryLine03
+  taskToDo: 
   currState: 0
 --- !u!4 &844257974
 Transform:
@@ -1808,6 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &1007504465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1890,6 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724f61f2e8fb7b4cac3f3f1cc150f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   currentGameobj: {fileID: 0}
   startState: 1
   showDelay: 0
@@ -2099,6 +2111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84df4aca73c6cff488e78a786da86485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   Tear0: {fileID: 0}
   animatior: {fileID: 0}
   isStart: 0
@@ -2734,7 +2747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d064dd279dc837948853bf6cfd5f9b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: 3
   currentGameobj: {fileID: 0}
+  GameObjName: ClickObj
   startState: 0
   onClickShow: 1
   triggerOnce: 1
@@ -2880,6 +2895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724f61f2e8fb7b4cac3f3f1cc150f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   currentGameobj: {fileID: 0}
   startState: 1
   showDelay: 0
@@ -3013,6 +3029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!212 &1478174879
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3135,6 +3152,7 @@ MonoBehaviour:
   nextSceneName: Scene03
   currStoryClassName: StroyScene02
   nextStoryClassName: StroyScene03
+  taskToDo: 
   currState: 0
 --- !u!1 &1617205682
 GameObject:
@@ -3186,6 +3204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed674cc2c97700a489cd6e412cca6a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
 --- !u!114 &1617205685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,6 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8724f61f2e8fb7b4cac3f3f1cc150f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
   currentGameobj: {fileID: 0}
   startState: 0
   showDelay: 1.2
@@ -3836,7 +3856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d064dd279dc837948853bf6cfd5f9b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: 5
   currentGameobj: {fileID: 0}
+  GameObjName: ClickObj
   startState: 0
   onClickShow: 1
   triggerOnce: 1

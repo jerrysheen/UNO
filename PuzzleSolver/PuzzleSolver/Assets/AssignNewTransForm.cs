@@ -61,7 +61,7 @@ public class AssignNewTransForm : MonoBehaviour
         
         if(!idleObj || ! moveObj) Debug.LogError("Please assign obj");
         charecterIdle = GameObject.Find("CharacterIdle");
-        charecterMove = GameObject.Find("CharacterMove");
+        charecterMove = GameObject.Find("CharecterMove");
 
     }
 

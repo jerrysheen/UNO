@@ -9,7 +9,7 @@ public class UIDisplay : UIControllBase
 
     public GameObject showObj;
     public string showObjName;
-    public bool needShow = false;
+    public bool needShowWhenStart = false;
     public float delayDisplayTime = 0.0f;
     public bool reactByTaskList = false;
     public int reactStoryLineIndex = -1;
@@ -55,7 +55,7 @@ public class UIDisplay : UIControllBase
             showObj = this.transform.Find(showObjName).gameObject;
         }
 
-        showObj.SetActive(!needShow);
+        showObj.SetActive(needShowWhenStart);
  
     }
 
@@ -75,7 +75,7 @@ public class UIDisplay : UIControllBase
     {
         yield return new WaitForSeconds(waitTime);
 
-        showObj.SetActive(needShow);
+        showObj.SetActive(!needShowWhenStart);
 
     }
 }

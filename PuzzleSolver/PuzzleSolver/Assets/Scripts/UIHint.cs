@@ -11,8 +11,12 @@ public class UIHint : UIControllBase
     public int reactToProcessIndex;
     public GameObject original;
     public GameObject hint;
+    public bool shouldDisableOriginal;
+    public bool shouldDisableAll;
 
     public bool shouldStartCountDown;
+    public bool shouldGoToNextStoryLine = false;
+    public int nextStoryLineIndex;
     public float countDownTime = 5.0f;
     public float delayTime = 5.0f;
     private float countdown;
@@ -47,12 +51,21 @@ public class UIHint : UIControllBase
         }
 
         if (countdown <= 0 && shouldStartCountDown)
-        {
-            original.SetActive(false);
+        { 
+            if(shouldDisableOriginal)original.SetActive(false);
             hint.SetActive(true);
             // hint blink
-            Color alphaChange = hint.GetComponent<Image>().color;
-;
+            var Img = hint.GetComponent<Image>();
+            Color alphaChange;
+            if (Img)
+            {
+                alphaChange = hint.GetComponent<Image>().color;
+            }
+            else
+            {
+                alphaChange = hint.GetComponent<SpriteRenderer>().color;
+            }
+            
             if (alphaChange.a <= alphaMin)
             {
                 isMinus = 1.0f;
@@ -102,17 +115,17 @@ public class UIHint : UIControllBase
         if (StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex)
         {
             //  this.GetComponent<Image>().sprite = replaceSprite;
-            if (reactToProcessIndex == 0)
+            if (shouldGoToNextStoryLine)
             {
-                StoryManager.getInstance.ValiDateState(reactToProcessIndex + 2);
-            }
-            else
-            {
-                StoryManager.getInstance.ValiDateState(reactToProcessIndex + 1);
+                StoryManager.getInstance.ValiDateState(nextStoryLineIndex);
             }
 
-            original.SetActive(true);
+            if(shouldDisableOriginal)original.SetActive(true);
             hint.SetActive(false);
+            if (shouldDisableAll)
+            {
+                this.gameObject.SetActive(false);
+            }
         }
         
     }

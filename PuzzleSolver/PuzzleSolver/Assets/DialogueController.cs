@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     public int reactToProcessIndex;
     public Material dialogueShowMat;
+    public Material dialogueShowMat01;
     public GameObject dialogue;
     public GameObject text;
     public GameObject text01;
@@ -19,6 +20,7 @@ public class DialogueController : MonoBehaviour
     private float countdown;
     public float gotoNextStoryLineThreash;
     public bool needSendGotoNextInfo;
+    public int nextLineIndex;
     public float blinkSpeed = .3f;
     public float blinkMaxTime = 5.0f;
     private float isMinus = 1.0f;
@@ -36,6 +38,7 @@ public class DialogueController : MonoBehaviour
         countdown = 0.0f;
         dialogue = this.transform.Find("Dialogue").gameObject;
         text = dialogue.transform.Find("Text").gameObject;
+        text01 = dialogue.transform.Find("Text01")?.gameObject;
         //text01 = dialogue.transform.Find("");
         if (!dialogue)
         {
@@ -43,6 +46,11 @@ public class DialogueController : MonoBehaviour
         }
         dialogue.SetActive(false);
         dialogueShowMat = text.GetComponent<Image>().material;
+        dialogueShowMat01 = text01?.GetComponent<Image>().material;
+        if (dialogueShowMat01 != null)
+        {
+            dialogueShowMat01.SetFloat("_ReadSpeed", 0.0f);
+        }
     }
 
     private void Update()
@@ -71,17 +79,34 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator DelayTime (float beforeShowtime, float disableDelay)
     {
+
+
         yield return new WaitForSeconds(beforeShowtime);
         shouldStartCountDown = true;
         
         // show dialogue:
         dialogue.SetActive(true);
+        countdown = 0.0f;
         while (countdown < blinkMaxTime){
             countdown += Time.deltaTime * blinkSpeed;
             //Debug.Log(countdown);
             dialogueShowMat.SetFloat("_ReadSpeed", countdown);
             yield return null;
         }
+
+        countdown = 0.0f;
+        if (text01 != null)
+        {
+            while (countdown < blinkMaxTime){
+                countdown += Time.deltaTime * blinkSpeed;
+                //Debug.Log(countdown);
+                dialogueShowMat01.SetFloat("_ReadSpeed", countdown);
+                yield return null;
+            }
+        }
+
+
+
 
         float currCountDown = countdown;
         // disable
@@ -91,10 +116,15 @@ public class DialogueController : MonoBehaviour
             countdown += Time.deltaTime;
             yield return null;
         }
+        
+        
+        
+        
+        
         dialogue.SetActive(false);
         if (needSendGotoNextInfo && StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex)
         {
-            StoryManager.getInstance.ValiDateState((int)reactToProcessIndex + 1);
+            StoryManager.getInstance.ValiDateState(nextLineIndex);
         }
     }
     

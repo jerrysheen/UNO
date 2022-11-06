@@ -11,9 +11,11 @@ public class UIClickedAble : UIControllBase
     public int gotoNext;
     public bool willDoSceneTransfer;
     public string nextScene;
+
+    public float waitSceneTransferTime = 0.0f;
     void Start()
     {
-        reactToStoryLineIndex = new List<int>();
+        //reactToStoryLineIndex = new List<int>();
     }
 
     // Update is called once per frame
@@ -25,23 +27,29 @@ public class UIClickedAble : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if (willDoSceneTransfer)
-        {
-            SceneManager.LoadScene(nextScene);
-        }
         foreach (var VARIABLE in reactToStoryLineIndex)
         {
             if (StoryManager.getInstance.currStory.currStoryLine == VARIABLE)
             {
                 StoryManager.getInstance.ValiDateState(gotoNext);
-                foreach(Collider c in GetComponents<Collider> ())
+                foreach(Collider2D c in GetComponents<Collider2D> ())
                 {
                     c.enabled = false;
                 }
                 
             }
         }
+        if (willDoSceneTransfer)
+        {
+            StartCoroutine(WaitToNextScene(waitSceneTransferTime));
+        }
+
         
-        
+    }
+
+    IEnumerator WaitToNextScene(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(nextScene);
     }
 }
