@@ -36,4 +36,5 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         Debug.Log(this.gameObject.name + " Released!");
         //throw new System.NotImplementedException();
     }
+    
 }

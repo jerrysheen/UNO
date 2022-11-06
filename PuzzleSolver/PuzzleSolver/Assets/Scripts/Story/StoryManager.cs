@@ -18,6 +18,7 @@ namespace StoryManagement
         /// </summary>
         public static event Action<int> onGameStateChanged;
 
+        public float waitTime = 3.0f;
         public Story currStory = null;
         /// <summary>
         /// totalStoryLine 会比enum多一个，因为会多一个start
@@ -42,7 +43,7 @@ namespace StoryManagement
 
             if (currStory.TotalStoryLineNum == curr + 1)
             {
-                StartCoroutine(Wait(3.0f));
+                StartCoroutine(Wait(waitTime));
                 // story 根据场景注册，每次新场景加载完之后判断，如果是null的话就给新值。
             }
 
