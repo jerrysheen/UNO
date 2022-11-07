@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using StoryManagement;
@@ -13,15 +14,46 @@ public class UIClickedAble : UIControllBase
     public string nextScene;
 
     public float waitSceneTransferTime = 0.0f;
+
+    public bool willDisableAfterClick = false;
     void Start()
     {
         //reactToStoryLineIndex = new List<int>();
+        foreach(Collider2D c in GetComponents<Collider2D>())
+        {
+            c.enabled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        StoryManager.onGameStateChanged += onGameStateChange;
+    }
+
+    private void OnDestroy()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChange;
+
+    }
+
+    public void onGameStateChange(int state)
+    {
+        foreach (var VARIABLE in reactToStoryLineIndex)
+        {
+            if (state == VARIABLE)
+            {
+                foreach(Collider2D c in GetComponents<Collider2D>())
+                {
+                    c.enabled = true;
+                }
+            }
+        }
     }
 
     public override void OnClicked()
@@ -36,9 +68,14 @@ public class UIClickedAble : UIControllBase
                 {
                     c.enabled = false;
                 }
-                
             }
         }
+
+        if (willDisableAfterClick)
+        {
+            this.gameObject.SetActive(false);
+        }
+
         if (willDoSceneTransfer)
         {
             StartCoroutine(WaitToNextScene(waitSceneTransferTime));

@@ -52,11 +52,18 @@ namespace StoryManagement
         public void ValiDateCurrent(int curr)
         {
             //if (curr == currStoryLine) currStoryLine = next;
-
-            // 提交验证由本地去完成。
-            currStory.currStoryLine = curr;
-            StoryManager.getInstance.currStory.taskToDo[curr] = 1;
-            onGameStateChanged?.Invoke(curr);
+            if (StoryManager.getInstance.currStory.taskToDo != null || StoryManager.getInstance.currStory.taskToDo.Count <= 0)
+            {
+                currStory.currStoryLine = curr;
+                StoryManager.getInstance.currStory.taskToDo[curr] = 1;
+                onGameStateChanged?.Invoke(curr);
+            }
+            else
+            {
+                Debug.LogError(curr);
+                currStory.currStoryLine = curr;
+                onGameStateChanged?.Invoke(curr);
+            }
         }
         
         

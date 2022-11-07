@@ -26,7 +26,9 @@ public class UIDragable : UIControllBase
     public bool needFollow;
     public Transform followBy;
     public Vector3 followRotate;
-    public bool notYetDrag;
+    private bool notYetDrag;
+    public bool needGoToNext = false;
+    public int nextLineIndex = -1;
     void Start()
     {
         notYetDrag = true;
@@ -161,22 +163,28 @@ public class UIDragable : UIControllBase
             // 不能以这个为数， 最后直接跳到总共完成的那边去应该。
             // 应该自己在这边注册， 而不是去manager里面注册。
             //StoryManager.getInstance.ValiDateState(reactToStoryLine);
-            StoryManager.getInstance.ValiDateCurrent(reactToStoryLine);
-
-            bool allDone = true;
-            for (int i = reactToStoryLine - parallexStoryLineBefore; i <= reactToStoryLine + parallexStoryLineAfter; i++) 
+            if (needGoToNext)
             {
-                if (StoryManager.getInstance.currStory.taskToDo[i] == 0)
-                {
-                    allDone = false;
-                }
+                StoryManager.getInstance.ValiDateState(nextLineIndex);
             }
-
-            if (allDone)
+            else
             {
-                StoryManager.getInstance.ValiDateState(reactToStoryLine + parallexStoryLineAfter + 1);
-            }
+                StoryManager.getInstance.ValiDateCurrent(reactToStoryLine);
             
+                bool allDone = true;
+                for (int i = reactToStoryLine - parallexStoryLineBefore; i <= reactToStoryLine + parallexStoryLineAfter; i++) 
+                {
+                    if (StoryManager.getInstance.currStory.taskToDo[i] == 0)
+                    {
+                        allDone = false;
+                    }
+                }
+
+                if (allDone)
+                {
+                    StoryManager.getInstance.ValiDateState(reactToStoryLine + parallexStoryLineAfter + 1);
+                }  
+            }
 
         }
 
