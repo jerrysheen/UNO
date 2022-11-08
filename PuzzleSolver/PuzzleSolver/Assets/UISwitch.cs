@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using StoryManagement;
@@ -28,13 +29,32 @@ public class UISwitch : UIControllBase
         
     }
 
-    public override void OnClicked()
+    private void OnEnable()
     {
-        base.OnClicked();
-        if (StoryManager.getInstance.currStory.currStoryLine == reactToLine || reactToLine == -1)
+        StoryManager.onGameStateChanged += onGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChanged;
+    }
+
+    public void onGameStateChanged(int state)
+    {
+        if (state == reactToLine || reactToLine == -1)
         {
             showObj.SetActive(true);
             disableObj.SetActive(false);
         }
+    }
+
+    public override void OnClicked()
+    {
+        base.OnClicked();
+        // if (StoryManager.getInstance.currStory.currStoryLine == reactToLine || reactToLine == -1)
+        // {
+        //     showObj.SetActive(true);
+        //     disableObj.SetActive(false);
+        // }
     }
 }

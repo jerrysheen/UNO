@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using StoryManagement;
 using UnityEngine;
 
@@ -14,8 +15,10 @@ public class ClickDisplay : UIControllBase
     public bool startState;
     public bool onClickShow = true;
     public bool triggerOnce = true;
+    public bool needToGoToNextLine = true;
     public float showDelay;
     public int responseStoryLineIndex = -1;
+    public int responseStoryLineIndex01 = -1;
     // public bool showWillTriggerNext = false;
     // public float disableDelay;
     // public int disableStoryLineIndex = -1;
@@ -26,7 +29,7 @@ public class ClickDisplay : UIControllBase
     {
         //m_scrollAnimator = GetComponent<Animator>();
         //if(m_scrollAnimator == null) Debug.LogError("Can't find Animator ！");
-
+        //responseStoryLineList = new List<int>();
         StoryManager.onGameStateChanged += onGameStateChange;
         if (GameObjName == "")
         {
@@ -66,8 +69,7 @@ public class ClickDisplay : UIControllBase
     
     private void onGameStateChange(int obj)
     {
-        // 防止影响其他点击效果
-        if (obj == responseStoryLineIndex || (responseStoryLineIndex == 1 || obj == 0))
+        if (obj == responseStoryLineIndex || (responseStoryLineIndex == 1 || obj == 0) || (responseStoryLineIndex01 != -1 && responseStoryLineIndex01 == obj))
         {
             var Colliders = this.GetComponents<Collider2D>();
             foreach (var VARIABLE in Colliders)
@@ -108,10 +110,10 @@ public class ClickDisplay : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if (StoryManager.getInstance.currStory.currStoryLine == responseStoryLineIndex || reactToLine == -1)
+        if (StoryManager.getInstance.currStory.currStoryLine == responseStoryLineIndex || reactToLine == -1 || (responseStoryLineIndex01 != -1 && responseStoryLineIndex01 == StoryManager.getInstance.currStory.currStoryLine))
         {
             //  this.GetComponent<Image>().sprite = replaceSprite;
-            if (reactToLine != -1)
+            if (reactToLine != -1 && needToGoToNextLine)
             {
                 StoryManager.getInstance.ValiDateState(responseStoryLineIndex + 1);
             }

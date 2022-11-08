@@ -27,6 +27,7 @@ public class UIDragable : UIControllBase
     public Transform followBy;
     public Vector3 followRotate;
     private bool notYetDrag;
+    public bool onlyNeedTrigger = false;
     public bool needGoToNext = false;
     public int nextLineIndex = -1;
     void Start()
@@ -41,12 +42,12 @@ public class UIDragable : UIControllBase
 
         triggerDrag = false;
 
-        if(idleObj)idleObj = this.transform.Find("Idle").gameObject;
-        if(moveObj)moveObj = this.transform.Find("Move").gameObject;
+        if(!idleObj)idleObj = this.transform.Find("Idle")?.gameObject;
+        if(!moveObj)moveObj = this.transform.Find("Move")?.gameObject;
         
        // if(!idleObj || ! moveObj) Debug.LogError("Please assign obj");
-        if(idleObj)idleObj.SetActive(true);
         if(moveObj)moveObj.SetActive(false);
+        if(idleObj)idleObj.SetActive(true);
     }
 
     // Update is called once per frame
@@ -163,7 +164,11 @@ public class UIDragable : UIControllBase
             // 不能以这个为数， 最后直接跳到总共完成的那边去应该。
             // 应该自己在这边注册， 而不是去manager里面注册。
             //StoryManager.getInstance.ValiDateState(reactToStoryLine);
-            if (needGoToNext)
+            if (onlyNeedTrigger)
+            {
+
+            }
+            else if (needGoToNext)
             {
                 StoryManager.getInstance.ValiDateState(nextLineIndex);
             }
