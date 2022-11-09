@@ -15,7 +15,12 @@ namespace StoryManagement
         GetMix = 3,
         PutWoods = 4,
         MoveCandle = 5,
-        Fire = 6
+        Fire = 6,
+        aaa,
+        ccc,
+        cccd,
+        rrrr,
+        qqqq,ffff,sss,a,w,errrr,
         
         
     }

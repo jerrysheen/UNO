@@ -10,6 +10,7 @@ public class Scene08Door : UIControllBase
     public int reactToFalseResIndex = -1;
     public float waitRestartTime = 1.5f;
     public int reactToTrueResIndex = -1;
+    public int lastState = -1;
     public float waitNextSceneTime = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,24 @@ public class Scene08Door : UIControllBase
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.name == "CharecterMove")
+        {
+            var currIndex = StoryManager.getInstance.currStory.currStoryLine;
+            if (currIndex == reactToFalseResIndex + 1 || currIndex == reactToTrueResIndex + 1)
+            {
+                StoryManager.getInstance.ValiDateState( currIndex + 1);
+            }
+        }
+    }
+
+    public override void OnClicked()
+    {
+        base.OnClicked();
+        var currIndex = StoryManager.getInstance.currStory.currStoryLine;
+        if (currIndex == reactToFalseResIndex || currIndex == reactToTrueResIndex)
+        {
+            StoryManager.getInstance.ValiDateState( currIndex + 1);
+        }
+
     }
 }

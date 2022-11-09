@@ -19,7 +19,10 @@ namespace StoryManagement
         Get_CatFood = 7,
         Get_Key = 8,
         Get_Money = 9,
-        Finished = 10,
+        aaa = 10,
+        bbb = 11,
+        ccc = 12,
+        Finished = 13,
     }
 
     public class StoryScene07 : Story

@@ -18,6 +18,7 @@ public class Scene08CharecterMove : MonoBehaviour
     public GameObject charecter;
     public bool shouldShow = false;
     public float speed = 250.0f;
+    public float moveTime = 2.5f;
     void Start()
     {
         charecter = this.transform.Find("CharecterMove").gameObject;
@@ -27,15 +28,15 @@ public class Scene08CharecterMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shouldShow)
-        {
-            if(!charecter.activeSelf) charecter.SetActive(true);
-            this.transform.position += Vector3.left * Time.deltaTime * speed;
-        }
-        else
-        {
-            if(charecter.activeSelf) charecter.SetActive(false);
-        }
+        // if (shouldShow)
+        // {
+        //     if(!charecter.activeSelf) charecter.SetActive(true);
+        //     this.transform.position += Vector3.left * Time.deltaTime * speed;
+        // }
+        // else
+        // {
+        //     if(charecter.activeSelf) charecter.SetActive(false);
+        // }
 
     }
         
@@ -52,21 +53,18 @@ public class Scene08CharecterMove : MonoBehaviour
 
     public void onGameStateChange(int state)
     {
-        if (state == reactToFalseResIndex)
+        if (state == reactToFalseResIndex || state == reactToTrueResIndex)
         {
             //charecter.SetActive(true);
             shouldShow = true;
+            StartCoroutine(MoveToDoor(moveTime));
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == colliderName)
+        if (other.name == "Door")
         {
-            shouldShow = false;
-            if (StoryManager.getInstance.currStory.currStoryLine == reactToFalseResIndex)
-            {
-                StartCoroutine(WaitToLoad("Scene08", waitRestartTime));
-            }
+            this.gameObject.SetActive(false);
         }
     }
     
@@ -74,5 +72,21 @@ public class Scene08CharecterMove : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(sceneName);
+    }
+    
+    
+    IEnumerator MoveToDoor(float countDown)
+    {
+        yield return new WaitForSeconds(1.5f);
+        if(!charecter.activeSelf) charecter.SetActive(true);
+
+        while (countDown > 0)
+        {
+            countDown -= Time.deltaTime;
+            this.transform.position += Vector3.left * Time.deltaTime * speed;
+            yield return null;
+        }
+
+        //     this.transform.position += Vector3.left * Time.deltaTime * speed;
     }
 }

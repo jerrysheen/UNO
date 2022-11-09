@@ -18,6 +18,10 @@ public class Scene08VMController : MonoBehaviour
     public float waitTimeClose;
     public int switchTofarStoryLine = 0;
     public int switchToNearStoryLine = 0;
+
+    public bool needToGoToNext = false;
+
+    public int nextLineIndex = 8;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -62,7 +66,7 @@ public class Scene08VMController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         vcamFar.SetActive(display);
-        //StoryManager.getInstance.ValiDateState((int)StoryLine02.PlayDialogue);
+        if(needToGoToNext)StoryManager.getInstance.ValiDateState(nextLineIndex);
     }
     
     IEnumerator Wait00(float waitTime)

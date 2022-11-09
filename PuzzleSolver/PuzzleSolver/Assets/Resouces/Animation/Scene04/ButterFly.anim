@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ButterFly
-  serializedVersion: 7
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -21,15 +21,15 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 6304680533165347148, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
-    - time: 0.15
+    - time: 0.083333336
       value: {fileID: 7406720025958079580, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
-    - time: 0.31666666
+    - time: 0.16666667
       value: {fileID: 2319581715681956737, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
-    - time: 0.48333332
+    - time: 0.25
       value: {fileID: 990464646419251231, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
-    - time: 0.65
+    - time: 0.33333334
       value: {fileID: -8945813494104016937, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
-    - time: 0.81666666
+    - time: 0.41666666
       value: {fileID: -7371687574428047442, guid: a0cdc7d15d75bcc41a5e0b65d8cb4a46, type: 3}
     attribute: m_Sprite
     path: 
@@ -61,7 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8333333
+    m_StopTime: 0.43333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

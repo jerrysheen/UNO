@@ -18,10 +18,23 @@ public class UIClickedAble : UIControllBase
     public bool willDisableAfterClick = false;
     void Start()
     {
-        //reactToStoryLineIndex = new List<int>();
-        foreach(Collider2D c in GetComponents<Collider2D>())
+        foreach (var VARIABLE in reactToStoryLineIndex)
         {
-            c.enabled = false;
+            if (StoryManager.getInstance != null && StoryManager.getInstance.currStory.currStoryLine == VARIABLE)
+            {
+                foreach(Collider2D c in GetComponents<Collider2D>())
+                {
+                    c.enabled = true;
+                }
+            }
+            else
+            {
+                //reactToStoryLineIndex = new List<int>();
+                foreach(Collider2D c in GetComponents<Collider2D>())
+                {
+                    c.enabled = false;
+                }
+            }
         }
     }
 
@@ -33,6 +46,7 @@ public class UIClickedAble : UIControllBase
 
     private void OnEnable()
     {
+
         StoryManager.onGameStateChanged += onGameStateChange;
     }
 
