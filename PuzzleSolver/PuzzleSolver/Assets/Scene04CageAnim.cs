@@ -32,15 +32,39 @@ public class Scene04CageAnim : UIControllBase
         }
     }
 
+    
+    private void OnEnable()
+    {
+        StoryManager.onGameStateChanged += onGameStateChange;
+    }
+
+
+    private void OnDestroy()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChange;
+    }
+
+    public void onGameStateChange(int state)
+    {
+        if (state == reactToLine)
+        {
+            //charecter.SetActive(true);
+            StartCoroutine(PlayAnim());
+        }
+    }
     public override void OnClicked()
     {
         base.OnClicked();
 
     }
 
-    IEnumerator WaitToNextStoryLine(float time)
+    IEnumerator PlayAnim()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(0.5f);
+        currAnim.SetBool("CageFly",true);
+       // yield return new WaitForSeconds(10.5f);
+        //currAnim.SetBool("Dissapear",true);
+        
         StoryManager.getInstance.ValiDateState(nextLineIndex);
     }
 }
