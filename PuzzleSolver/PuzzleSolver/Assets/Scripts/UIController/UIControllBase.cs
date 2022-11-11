@@ -8,7 +8,10 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 {
     // Start is called before the first frame update
     public int reactToLine = -1;
-    
+    public float delayTime = 0.0f;
+    public AudioSource clip;
+    public float volume;
+    public AudioSource audio;
     void Start()
     {
         
@@ -36,5 +39,17 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         Debug.Log(this.gameObject.name + " Released!");
         //throw new System.NotImplementedException();
     }
-    
+
+
+    public void playSoundOnce(float delayTime, AudioSource clip, float volume)
+    {
+        StartCoroutine(playOnce(delayTime, clip, volume));
+    }
+
+    IEnumerator playOnce(float delayTime, AudioSource clip, float volume)
+    {
+        yield return new WaitForSeconds(delayTime);
+        clip.PlayOneShot(clip, volume);
+    }
+
 }
