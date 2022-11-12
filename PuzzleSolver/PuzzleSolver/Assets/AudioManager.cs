@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class AudioManager : SingletonMono<AudioManager>
 {
+    public bool needDestroy = true;
     public static AudioSource BgmaudioSource;
     public static AudioSource sceneAudioSource;
     public static AudioSource sceneClickSource;
         protected override void Awake()
         {
             base.Awake();
+            if (!needDestroy)
+            {
+            DontDestroyOnLoad(this.gameObject);
+            }
         }
 
         public void PlaySceneAudio(AudioClip clip, float volume, bool loop, float delay)

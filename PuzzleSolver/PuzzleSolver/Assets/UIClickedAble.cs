@@ -106,6 +106,10 @@ public class UIClickedAble : UIControllBase
     IEnumerator WaitToNextScene(float time)
     {
         yield return new WaitForSeconds(time);
+        if (clip )
+        {
+            AudioManager.sceneAudioSource.Stop();
+        }
         SceneManager.LoadScene(nextScene);
     }
 }

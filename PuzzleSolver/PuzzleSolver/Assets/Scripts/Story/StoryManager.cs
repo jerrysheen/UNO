@@ -76,7 +76,9 @@ namespace StoryManagement
 
         public void GoToNextScene(string nextScene)
         {
-            SceneManager.LoadScene(nextScene);
+
+                AudioManager.sceneAudioSource.Stop();
+                SceneManager.LoadScene(nextScene);
         }
 
         protected override void Awake()

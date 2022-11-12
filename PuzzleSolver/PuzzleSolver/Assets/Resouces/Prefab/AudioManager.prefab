@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a31de8cc1fe4974fbdb88d11908aa4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needReset: 0
   bgmAudioSource: {fileID: 0}
 --- !u!1 &1151951347
 GameObject:
@@ -480,7 +481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2966441011502340259}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149fed8912b77324286d104e088bf7a0, type: 3}
   m_Name: 
