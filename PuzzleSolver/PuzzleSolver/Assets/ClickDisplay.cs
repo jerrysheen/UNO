@@ -76,6 +76,8 @@ public class ClickDisplay : UIControllBase
             {
                 VARIABLE.enabled = true;
             }
+            
+
         }
         else
         {
@@ -116,6 +118,11 @@ public class ClickDisplay : UIControllBase
             if (reactToLine != -1 && needToGoToNextLine)
             {
                 StoryManager.getInstance.ValiDateState(responseStoryLineIndex + 1);
+            }
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
             }
             currentGameobj.SetActive(onClickShow);
         }

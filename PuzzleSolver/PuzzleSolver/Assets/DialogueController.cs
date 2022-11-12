@@ -91,12 +91,13 @@ public class DialogueController : MonoBehaviour
             countdown += Time.deltaTime * blinkSpeed;
             //Debug.Log(countdown);
             dialogueShowMat.SetFloat("_ReadSpeed", countdown);
+//            Debug.Log(countdown);
             yield return null;
         }
 
-        countdown = 0.0f;
         if (text01 != null)
         {
+        countdown = 0.0f;
             while (countdown < blinkMaxTime){
                 countdown += Time.deltaTime * blinkSpeed;
                 //Debug.Log(countdown);
@@ -116,9 +117,7 @@ public class DialogueController : MonoBehaviour
             countdown += Time.deltaTime;
             yield return null;
         }
-        
-        
-        
+
         
         
         dialogue.SetActive(false);

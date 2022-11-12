@@ -8,10 +8,10 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 {
     // Start is called before the first frame update
     public int reactToLine = -1;
-    public float delayTime = 0.0f;
-    public AudioSource clip;
-    public float volume;
-    public AudioSource audio;
+    public AudioClip clip;
+    public float volume = (ulong)0.6;
+    public bool loop = false;
+    public float delay = (float)0.0f;
     void Start()
     {
         
@@ -49,7 +49,7 @@ public class UIControllBase : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     IEnumerator playOnce(float delayTime, AudioSource clip, float volume)
     {
         yield return new WaitForSeconds(delayTime);
-        clip.PlayOneShot(clip, volume);
+        //clip.PlayOneShot(clip, volume);
     }
 
 }

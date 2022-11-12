@@ -126,7 +126,22 @@ public class UIHint : UIControllBase
             {
                 this.gameObject.SetActive(false);
             }
+
+            if (clip)
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
         }
-        
+        else
+        {
+            if (clip)
+            {
+                AudioManager.getInstance.StopPlaySceneAudio(clip);
+            }
+
+        }
+
+
     }
 }

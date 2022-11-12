@@ -56,6 +56,12 @@ public class UIScrollController : UIControllBase
         if (StoryManager.getInstance.currStory.currStoryLine == (int) StoryLine01.Click_Scroll - 1)
         {
             StoryManager.getInstance.ValiDateState((int) StoryLine01.Click_Scroll);
+            
+            if (clip)
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
         }
 
 

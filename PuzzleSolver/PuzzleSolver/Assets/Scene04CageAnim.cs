@@ -66,5 +66,10 @@ public class Scene04CageAnim : UIControllBase
         //currAnim.SetBool("Dissapear",true);
         
         StoryManager.getInstance.ValiDateState(nextLineIndex);
+        if (clip )
+        {
+            AudioManager.sceneAudioSource.Stop();
+            AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+        }
     }
 }

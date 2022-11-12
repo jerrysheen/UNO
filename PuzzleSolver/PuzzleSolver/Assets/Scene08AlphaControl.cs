@@ -33,6 +33,11 @@ public class Scene08AlphaControl : UIControllBase
     {
         if (state == reactToLine)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             var img = GetComponent<Image>();
             if (img != null)
             {

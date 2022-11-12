@@ -55,7 +55,13 @@ public class UICinnabarController : UIControllBase
         {
             //  this.GetComponent<Image>().sprite = replaceSprite;
             StoryManager.getInstance.ValiDateState((int)StoryLine01.Click_Cinnabar);
+            if (clip)
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
         }
+        
         
     }
 }

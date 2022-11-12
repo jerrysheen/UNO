@@ -37,7 +37,7 @@ public class AssignNewTransForm : MonoBehaviour
         {
             if (idleObj.activeSelf)
             {
-                nextTrans =  charecterMove.transform.Find("Show/bone_1/bone_2/bone_3/bone_4/bone_15");
+                nextTrans =  charecterMove.transform.Find("GameObject/Show/bone_1/bone_2/bone_3/bone_4/bone_15");
                 idleObj.transform.parent.gameObject.GetComponent<UIDragable>().followBy = nextTrans;
                 idleObj.transform.parent.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 180.0f);
 

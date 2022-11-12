@@ -250,6 +250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 8
+  clip: {fileID: 8300000, guid: 719cfe6e30c37f14e923d744f292593e, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   reactToProcessIndex: 8
   original: {fileID: 0}
   hint: {fileID: 0}
@@ -296,6 +300,63 @@ PolygonCollider2D:
       - {x: 104.612915, y: -95.57742}
       - {x: 109.534546, y: -52.08835}
       - {x: 93.008, y: -12.932072}
+--- !u!1001 &101055390
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -653.18634
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 139.92963
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1624.8009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340259, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
 --- !u!1 &101463958
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +630,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 8
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Show
   needShowWhenStart: 0
@@ -773,8 +838,12 @@ PrefabInstance:
       value: 268.3612
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
-      propertyPath: blinkMaxTime
+      propertyPath: blinkSpeed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: blinkMaxTime
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: nextLineIndex
@@ -879,10 +948,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 12
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Money
   needShowWhenStart: 0
-  delayDisplayTime: 0
+  delayDisplayTime: 0.5
   reactByTaskList: 0
   reactStoryLineIndex: 12
 --- !u!1 &517039688
@@ -988,8 +1061,12 @@ PrefabInstance:
       value: 268.3612
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
-      propertyPath: blinkMaxTime
+      propertyPath: blinkSpeed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: blinkMaxTime
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: nextLineIndex
@@ -1675,6 +1752,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 12
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Lock
   needShowWhenStart: 1
@@ -1740,6 +1821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 9
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: NoLight
   needShowWhenStart: 0
@@ -1759,6 +1844,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 9
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 09000000
   gotoNext: 10
   willDoSceneTransfer: 0
@@ -1797,6 +1886,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 10
+  clip: {fileID: 8300000, guid: 719cfe6e30c37f14e923d744f292593e, type: 3}
+  volume: 1
+  loop: 0
+  delay: 4.4
   animator: {fileID: 0}
 --- !u!60 &776967792
 PolygonCollider2D:
@@ -1967,6 +2060,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 5
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 708066910}
   moveObj: {fileID: 625378449}
@@ -2096,6 +2193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 11
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Cat
   needShowWhenStart: 1
@@ -2185,6 +2286,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 8300000, guid: 719cfe6e30c37f14e923d744f292593e, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Chair
   needShowWhenStart: 0
@@ -2204,6 +2309,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 0500000006000000
   gotoNext: 7
   willDoSceneTransfer: 0
@@ -2497,6 +2606,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 7
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Show
   needShowWhenStart: 1
@@ -2781,6 +2894,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 5
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 610359991}
   moveObj: {fileID: 517039688}
@@ -3130,6 +3247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457476371}
   - component: {fileID: 1457476370}
+  - component: {fileID: 1457476372}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -3168,6 +3286,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457476372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457476369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149f18bcea83ed143a5fd2fd8f9ebc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactToLine: 13
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
+  shouldChangeVignette: 1
+  vigChangeTime: 7
+  vigStartValue: 0
+  vigEndValue: 1
+  shouldChangeBloom: 0
+  bloomChangeTime: 0
+  bloomStartValue: 0
+  bloomvigEndValue: 0
 --- !u!1 &1536839784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3498,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 4
+  clip: {fileID: 8300000, guid: 4774b6ac555e9b94eafa5506c23142c7, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   animator: {fileID: 0}
 --- !u!114 &1553847162
 MonoBehaviour:
@@ -3369,6 +3516,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 3
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 03000000
   gotoNext: 4
   willDoSceneTransfer: 0
@@ -3465,6 +3616,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 11
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: KeyGfx
   needShowWhenStart: 0
@@ -3524,6 +3679,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 11
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 655816164}
@@ -4006,6 +4165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
+  clip: {fileID: 8300000, guid: e3fb09157d0763843abf25edb161f17a, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   walkLeftStoryLine: -50
   walkLefttime: 3
   walkRightStoryLine: 7
@@ -4219,6 +4382,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 12
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 0c000000
   gotoNext: 13
   willDoSceneTransfer: 1
@@ -4267,7 +4434,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4388,6 +4555,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 3
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 02000000
   gotoNext: 3
   willDoSceneTransfer: 0
@@ -4482,6 +4653,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToProcessIndex: 1
   original: {fileID: 0}
   hint: {fileID: 0}
@@ -4558,6 +4733,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 2
+  clip: {fileID: 8300000, guid: 7b2ce73a3cfd7d94f95135619c852494, type: 3}
+  volume: 1
+  loop: 0
+  delay: 0
   animator: {fileID: 0}
 --- !u!1 &2117209642
 GameObject:
@@ -4611,6 +4790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 10
+  clip: {fileID: 0}
+  volume: 0.6
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 0a000000
   gotoNext: 11
   willDoSceneTransfer: 0

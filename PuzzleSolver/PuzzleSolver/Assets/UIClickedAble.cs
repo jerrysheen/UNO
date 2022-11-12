@@ -78,6 +78,11 @@ public class UIClickedAble : UIControllBase
             if (StoryManager.getInstance.currStory.currStoryLine == VARIABLE)
             {
                 StoryManager.getInstance.ValiDateState(gotoNext);
+                if (clip )
+                {
+                    AudioManager.sceneAudioSource.Stop();
+                    AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+                }
                 foreach(Collider2D c in GetComponents<Collider2D> ())
                 {
                     c.enabled = false;

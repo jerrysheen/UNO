@@ -5,7 +5,7 @@ using StoryManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Scene08CharecterMove : MonoBehaviour
+public class Scene08CharecterMove : UIControllBase
 {
     // Start is called before the first frame update
 
@@ -55,6 +55,11 @@ public class Scene08CharecterMove : MonoBehaviour
     {
         if (state == reactToFalseResIndex || state == reactToTrueResIndex)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             //charecter.SetActive(true);
             shouldShow = true;
             StartCoroutine(MoveToDoor(moveTime));
@@ -65,6 +70,11 @@ public class Scene08CharecterMove : MonoBehaviour
         if (other.name == "Door")
         {
             this.gameObject.SetActive(false);
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+
+            }
         }
     }
     

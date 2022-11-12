@@ -29,8 +29,20 @@ public class UIAnimatiorController : UIControllBase
         if (obj == reactToLine)
         {
             animator.enabled = true;
+            if (clip )
+            {
+                StartCoroutine(PlayAudio(delay));
+                
+            }
         }
 
+    }
+
+    IEnumerator PlayAudio(float time)
+    {
+        yield return new WaitForSeconds(time);
+        AudioManager.sceneAudioSource.Stop();
+        AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, 0.0f);
     }
 
     // Update is called once per frame

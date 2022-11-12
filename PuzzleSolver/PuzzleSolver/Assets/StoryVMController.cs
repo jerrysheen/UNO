@@ -5,7 +5,7 @@ using Cinemachine;
 using StoryManagement;
 using UnityEngine;
 
-public class StoryVMController : MonoBehaviour
+public class StoryVMController : UIControllBase
 {
 // Start is called before the first frame update
     //private Animator m_scrollAnimator;
@@ -45,6 +45,11 @@ public class StoryVMController : MonoBehaviour
 //        Debug.LogError(curr);
         if (obj == switchTofarStoryLine)
         {
+            if (clip)
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             StartCoroutine(Wait(waitTimeFar, true));
         }
         else if (obj == switchToNearStoryLine)

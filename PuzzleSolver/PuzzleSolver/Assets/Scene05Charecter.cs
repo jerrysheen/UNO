@@ -42,6 +42,11 @@ public class Scene05Charecter : UIControllBase
     {
         if (state == 1)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             currObj.SetActive(true);
             renderer.flipX = true;
             //animator.enabled = true;
@@ -49,6 +54,11 @@ public class Scene05Charecter : UIControllBase
         }
         else if(state == 2)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             currObj.SetActive(true);
             renderer.flipX = false;
             //animator.enabled = true;
@@ -80,5 +90,13 @@ public class Scene05Charecter : UIControllBase
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (clip )
+        {
+            AudioManager.sceneAudioSource.Stop();
+        }
     }
 }

@@ -49,12 +49,18 @@ public class Scene07Charecter : UIControllBase
             currObj.SetActive(true);
             renderer.flipX = true;
             //animator.enabled = true;
+
             StartCoroutine(RunLeft(walkLefttime));
         }
         else if(state == walkRightStoryLine)
         {
             currObj.SetActive(true);
             renderer.flipX = false;
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             //animator.enabled = true;
             StartCoroutine(RunRight(walkRighttime));
 
@@ -89,7 +95,11 @@ public class Scene07Charecter : UIControllBase
         {
             StoryManager.getInstance.ValiDateState(nextLineIndex);
         }
+        if (clip )
+        {
+            AudioManager.sceneAudioSource.Stop();
 
+        }
         this.gameObject.SetActive(!needDisapear);
     }
     // Update is called once per frame

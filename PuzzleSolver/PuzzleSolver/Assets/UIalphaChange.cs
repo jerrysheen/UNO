@@ -34,6 +34,11 @@ public class UIalphaChange : UIControllBase
     {
         if (state == reactToLine)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             StartCoroutine(ColorDecrease(disapearTime));
         }
 
@@ -52,6 +57,11 @@ public class UIalphaChange : UIControllBase
             img.color = color;
             //Debug.Log(".....");
             yield return null;
+        }
+        if (clip )
+        {
+            AudioManager.sceneAudioSource.Stop();
+
         }
     }
 }

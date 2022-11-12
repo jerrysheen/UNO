@@ -50,6 +50,11 @@ public class Scene08ButterFly : UIControllBase
     {
         if (state == reactToLine)
         {
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             butterFly.SetActive(true);
             GetComponent<Animator>().enabled = true;
             startCountDown = true;

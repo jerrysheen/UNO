@@ -364,6 +364,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 5
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 202095448}
   moveObj: {fileID: 202095448}
@@ -622,6 +626,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 8300000, guid: ac425c45b43f21f4885a29b0ce4566a3, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: 
   needShowWhenStart: 0
@@ -768,6 +776,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 5
+  clip: {fileID: 8300000, guid: 719cfe6e30c37f14e923d744f292593e, type: 3}
+  volume: 0.5
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Show
   needShowWhenStart: 0
@@ -810,8 +822,12 @@ PrefabInstance:
       value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: blinkSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: blinkMaxTime
-      value: 0.2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: nextLineIndex
@@ -930,6 +946,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: 
   needShowWhenStart: 0
@@ -1436,6 +1456,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 13
+  clip: {fileID: 8300000, guid: 917265f01a056be449f54c8302f17b54, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   disapearTime: 3
 --- !u!1 &444627717
 GameObject:
@@ -1950,6 +1974,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 9
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Show
   needShowWhenStart: 0
@@ -1971,6 +1999,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &573207096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -653.18634
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 139.92963
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1624.8009
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340254, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340259, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
 --- !u!1 &574206965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,6 +2147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 4
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 574206965}
@@ -2220,6 +2309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0f930c9ec1cc34b920d32ef329ff0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
+  clip: {fileID: 8300000, guid: 719cfe6e30c37f14e923d744f292593e, type: 3}
+  volume: 0.5
+  loop: 0
+  delay: 0
   other0Name: Flour
   show0Name: Flour
   show0Obj: {fileID: 0}
@@ -2754,6 +2848,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   currentGameobj: {fileID: 0}
   GameObjName: Rice
   startState: 0
@@ -3275,6 +3373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 3
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   currentGameobj: {fileID: 0}
   GameObjName: Selected
   startState: 0
@@ -3448,6 +3550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 8
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
 --- !u!1 &930475408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,6 +3714,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a28875f0f7fd948b6c7bab73b908d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reactToLine: -1
+  clip: {fileID: 8300000, guid: e3fb09157d0763843abf25edb161f17a, type: 3}
+  volume: 0.6
+  loop: 0
+  delay: 0
   colliderName: Door
   reactToFalseResIndex: 8
   waitRestartTime: 1.5
@@ -4058,7 +4169,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4206,6 +4317,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToFalseResIndex: 7
   waitRestartTime: 1.5
   reactToTrueResIndex: 13
@@ -4321,6 +4436,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
 --- !u!1 &1259869347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,8 +4646,12 @@ PrefabInstance:
       value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: blinkSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: blinkMaxTime
-      value: 0.2
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: nextLineIndex
@@ -4685,6 +4808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 0}
@@ -4917,6 +5044,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 3
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   triggerDrag: 0
   idleObj: {fileID: 0}
   moveObj: {fileID: 0}
@@ -5231,6 +5362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   backToCurrentScene: 10
   currSceneName: Scene08
   goToNextSceneIndex: -100
@@ -5313,6 +5448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 7
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   charecter: {fileID: 0}
   rotateIndex: 7
   dispearIndex: 8
@@ -5327,6 +5466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457476371}
   - component: {fileID: 1457476370}
+  - component: {fileID: 1457476372}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -5365,6 +5505,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457476372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457476369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149f18bcea83ed143a5fd2fd8f9ebc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactToLine: 15
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
+  shouldChangeVignette: 1
+  vigChangeTime: 12
+  vigStartValue: 0
+  vigEndValue: 1
+  shouldChangeBloom: 0
+  bloomChangeTime: 0
+  bloomStartValue: 0
+  bloomvigEndValue: 0
 --- !u!1 &1483780437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,6 +5677,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 12
+  clip: {fileID: 8300000, guid: d322d09cae7c9e34ba1f3a1996b29d0c, type: 3}
+  volume: 1
+  loop: 1
+  delay: 0
   butterFly: {fileID: 0}
   flyTime: 9.5
   startCountDown: 0
@@ -5860,6 +6029,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 9
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
 --- !u!222 &1610253382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5966,6 +6139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: Result
   needShowWhenStart: 0
@@ -5985,6 +6162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 6
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 06000000
   gotoNext: 7
   willDoSceneTransfer: 0
@@ -7086,6 +7267,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   reactToStoryLineIndex: 07000000
   gotoNext: 12
   willDoSceneTransfer: 0
@@ -7105,6 +7290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 8
+  clip: {fileID: 0}
+  volume: 1
+  loop: 0
+  delay: 0
 --- !u!60 &2101752655
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7203,6 +7392,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 2
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   showObj: {fileID: 0}
   showObjName: 
   disableObj: {fileID: 0}
@@ -7220,6 +7413,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: 1
+  clip: {fileID: 0}
+  volume: 0
+  loop: 0
+  delay: 0
   currentGameobj: {fileID: 0}
   GameObjName: Flour
   startState: 0

@@ -86,7 +86,13 @@ public class UIStampController : UIControllBase
         {
             StoryManager.getInstance.ValiDateState((int)StoryLine01.Leave_FingerPrint);
             showObj.SetActive(true);
+            if (clip)
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
         }
+        
         
     }
 }

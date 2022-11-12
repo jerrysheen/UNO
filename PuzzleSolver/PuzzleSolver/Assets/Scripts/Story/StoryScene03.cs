@@ -16,8 +16,6 @@ namespace StoryManagement
         Drag_HeadDress = 3,
         Drag_Cloth = 4,
         FinishThisTwo = 5,
-        TranstoNext = 6,
-        
     }
 
     public class StoryScene03 : Story

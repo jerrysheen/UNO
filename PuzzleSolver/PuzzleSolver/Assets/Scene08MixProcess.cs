@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using StoryManagement;
 using UnityEngine;
 
-public class Scene08MixProcess : MonoBehaviour
+public class Scene08MixProcess : UIControllBase
 {
     // Start is called before the first frame update
     public string other0Name;
@@ -69,11 +69,21 @@ public class Scene08MixProcess : MonoBehaviour
         if (other.name == other0Name)
         {
             show0Obj.SetActive(true);
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             triggerFirst = true;
         }
         else if (other.name == other1Name)
         {
             show1Obj.SetActive(true);
+            if (clip )
+            {
+                AudioManager.sceneAudioSource.Stop();
+                AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+            }
             triggerSecond = true;
         }
     }

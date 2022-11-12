@@ -32,6 +32,11 @@ public class UIDisplay : UIControllBase
             if (StoryManager.getInstance.currStory.taskToDo[reactStoryLineIndex] == 1)
             {
                 StartCoroutine(Wait(delayDisplayTime));
+                if (clip )
+                {
+                    AudioManager.sceneAudioSource.Stop();
+                    AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+                }
             }
         }
         else
@@ -39,7 +44,14 @@ public class UIDisplay : UIControllBase
             if (reactStoryLineIndex == state)
             {
                 StartCoroutine(Wait(delayDisplayTime));
+                if (clip )
+                {
+                    AudioManager.sceneAudioSource.Stop();
+                    AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
+                }
             }
+            
+
         }
         
     }
