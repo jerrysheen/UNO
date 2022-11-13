@@ -1202,6 +1202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2966441011502340259, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2966441012384299457, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1744,7 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc319eaee477924dbff1f3ac800fd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  waitTime: 5
   currStory: {fileID: 0}
 --- !u!4 &1434011415
 Transform:
@@ -1902,9 +1906,10 @@ MonoBehaviour:
   loop: 0
   delay: 0
   shouldChangeVignette: 1
-  vigChangeTime: 8
+  vigChangeTime: 10
   vigStartValue: 0
   vigEndValue: 1
+  vigCenter: {x: 0, y: 0}
   shouldChangeBloom: 0
   bloomChangeTime: 0
   bloomStartValue: 0

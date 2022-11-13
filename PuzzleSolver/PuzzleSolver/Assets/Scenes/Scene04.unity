@@ -3762,6 +3762,7 @@ MonoBehaviour:
   vigChangeTime: 10
   vigStartValue: 0
   vigEndValue: 1
+  vigCenter: {x: 0.35, y: 0.5}
   shouldChangeBloom: 0
   bloomChangeTime: 0
   bloomStartValue: 0
@@ -5247,6 +5248,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6296187881776339889, guid: 31e55d8296f6a6b4b9d926d0a102839d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296187881776339889, guid: 31e55d8296f6a6b4b9d926d0a102839d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
       objectReference: {fileID: 0}
@@ -5284,6 +5289,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296187881776339889, guid: 31e55d8296f6a6b4b9d926d0a102839d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296187881776339894, guid: 31e55d8296f6a6b4b9d926d0a102839d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6296187881776339900, guid: 31e55d8296f6a6b4b9d926d0a102839d, type: 3}

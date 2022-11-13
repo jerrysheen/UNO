@@ -17,6 +17,7 @@ public class Scene02PostProcssingController : UIControllBase
     public float vigChangeTime;
     public float vigStartValue;
     public float vigEndValue;
+    public Vector2 vigCenter;
     public bool shouldChangeBloom;
     public float bloomChangeTime;
     public float bloomStartValue;
@@ -27,6 +28,11 @@ public class Scene02PostProcssingController : UIControllBase
         volumn = GetComponent<Volume>();
         volumn.profile.TryGet(out bloom);
         volumn.profile.TryGet(out vignette);
+        if (vignette)
+        {
+            vignette.intensity.value = vigStartValue;
+            vignette.center = new Vector2Parameter(vigCenter);
+        }
     }
     
     private void OnEnable()
@@ -47,6 +53,7 @@ public class Scene02PostProcssingController : UIControllBase
         {
             if (shouldChangeVignette && vignette)
             {
+                
                 StartCoroutine(ChangeVignette(vigChangeTime, vigStartValue, vigEndValue));
             }
 
@@ -61,6 +68,7 @@ public class Scene02PostProcssingController : UIControllBase
     {
         while (time > 0)
         {
+            vignette.center = new Vector2Parameter(vigCenter);
             time -= Time.deltaTime;
             vignette.intensity.value +=   (end - start) / time  * Time.deltaTime;
             yield return null;

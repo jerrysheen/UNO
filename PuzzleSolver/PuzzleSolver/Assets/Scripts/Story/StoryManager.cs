@@ -76,8 +76,11 @@ namespace StoryManagement
 
         public void GoToNextScene(string nextScene)
         {
-
+            if (AudioManager.getInstance != null)
+            {
                 AudioManager.sceneAudioSource.Stop();
+            }
+
                 SceneManager.LoadScene(nextScene);
         }
 

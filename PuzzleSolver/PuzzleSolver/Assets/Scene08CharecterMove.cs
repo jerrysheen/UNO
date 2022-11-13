@@ -87,7 +87,7 @@ public class Scene08CharecterMove : UIControllBase
     
     IEnumerator MoveToDoor(float countDown)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         if(!charecter.activeSelf) charecter.SetActive(true);
 
         while (countDown > 0)

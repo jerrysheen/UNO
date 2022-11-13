@@ -24,6 +24,11 @@ public class UIDisplay : UIControllBase
     {
         StoryManager.onGameStateChanged -= onGameStateChange;
     }
+    
+    private void OnDisable()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChange;
+    }
 
     public void onGameStateChange(int state)
     {

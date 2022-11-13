@@ -2056,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2966441011502340259, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783e6f68feeefec40885ffbd5dd2ee31, type: 3}
@@ -3161,7 +3161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861349544601202176, guid: c9030b8845e655f44b9def50fa3a6603, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6861349544601202176, guid: c9030b8845e655f44b9def50fa3a6603, type: 3}
       propertyPath: m_SortingLayerID
@@ -4556,7 +4556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1284206377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5523,13 +5523,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactToLine: 15
   clip: {fileID: 0}
-  volume: 0
+  volume: 0.15
   loop: 0
   delay: 0
   shouldChangeVignette: 1
   vigChangeTime: 12
   vigStartValue: 0
   vigEndValue: 1
+  vigCenter: {x: 0.26, y: 0.74}
   shouldChangeBloom: 0
   bloomChangeTime: 0
   bloomStartValue: 0
@@ -6621,7 +6622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861349544601202176, guid: c9030b8845e655f44b9def50fa3a6603, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6861349544601202176, guid: c9030b8845e655f44b9def50fa3a6603, type: 3}
       propertyPath: m_SortingLayerID

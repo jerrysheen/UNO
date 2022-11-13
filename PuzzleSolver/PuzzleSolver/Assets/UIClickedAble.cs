@@ -20,7 +20,7 @@ public class UIClickedAble : UIControllBase
     {
         foreach (var VARIABLE in reactToStoryLineIndex)
         {
-            if (StoryManager.getInstance != null && StoryManager.getInstance.currStory.currStoryLine == VARIABLE)
+            if (StoryManager.getInstance != null && StoryManager.getInstance.currStory!= null && StoryManager.getInstance.currStory.currStoryLine == VARIABLE)
             {
                 foreach(Collider2D c in GetComponents<Collider2D>())
                 {
