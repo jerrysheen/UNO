@@ -62,7 +62,7 @@ public class Scene05Charecter : UIControllBase
             currObj.SetActive(true);
             renderer.flipX = false;
             //animator.enabled = true;
-            StartCoroutine(RunRight(5.5f));
+            StartCoroutine(RunRight(4.5f));
 
         }
     }
@@ -85,6 +85,8 @@ public class Scene05Charecter : UIControllBase
             this.transform.position += Vector3.right* 290.0f * Time.deltaTime;
             yield return null;
         }
+        StoryManager.getInstance.ValiDateState(walkRightStoryLine);
+        this.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()

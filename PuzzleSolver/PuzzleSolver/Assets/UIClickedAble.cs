@@ -56,13 +56,22 @@ public class UIClickedAble : UIControllBase
 
     }
 
+    private void OnDisable()
+    {
+        StoryManager.onGameStateChanged -= onGameStateChange;
+    }
+
+
     public void onGameStateChange(int state)
     {
+        if (reactToStoryLineIndex == null) return;
         foreach (var VARIABLE in reactToStoryLineIndex)
         {
+            var colliders = this.GetComponents<Collider2D>();
+            if (colliders == null || colliders.Length <= 0) return;
             if (state == VARIABLE)
             {
-                foreach(Collider2D c in GetComponents<Collider2D>())
+                foreach(Collider2D c in colliders)
                 {
                     c.enabled = true;
                 }

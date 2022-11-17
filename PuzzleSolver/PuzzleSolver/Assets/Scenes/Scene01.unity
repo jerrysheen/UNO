@@ -268,7 +268,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 73.66614, y: -53.565857}
+  m_Offset: {x: 85.180725, y: -37.044907}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -279,7 +279,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 64.44031, y: 105.51428}
+  m_Size: {x: 87.46948, y: 138.55618}
   m_EdgeRadius: 0
 --- !u!114 &150126032
 MonoBehaviour:
@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
-  clip: {fileID: 8300000, guid: a30773351425ad14c9921ea1b25114c6, type: 3}
-  volume: 0.6
+  clip: {fileID: 8300000, guid: 285926e959ec3114c903fd4894553d2c, type: 3}
+  volume: 0.25
   loop: 0
   delay: 0
   original: {fileID: 0}
@@ -1248,8 +1248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 809.4807, y: 199.02075}
-  m_SizeDelta: {x: 298.3389, y: 271.5563}
+  m_AnchoredPosition: {x: 803.51025, y: 213.94687}
+  m_SizeDelta: {x: 310.2798, y: 286.4825}
   m_Pivot: {x: 0, y: 1}
 --- !u!60 &1223146776
 PolygonCollider2D:
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactToLine: -1
   clip: {fileID: 8300000, guid: 5c17a9a35b728934997ecc37a5f836b4, type: 3}
-  volume: 0.6
+  volume: 0.4
   loop: 0
   delay: 0
 --- !u!114 &1223146778
@@ -1561,8 +1561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactToLine: -1
-  clip: {fileID: 8300000, guid: 5c17a9a35b728934997ecc37a5f836b4, type: 3}
-  volume: 1
+  clip: {fileID: 8300000, guid: 285926e959ec3114c903fd4894553d2c, type: 3}
+  volume: 0.25
   loop: 0
   delay: 0
   reactToProcessIndex: 1
@@ -1798,8 +1798,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 13.668335, y: 272.2228}
-  m_SizeDelta: {x: -586.8201, y: 55.5439}
+  m_AnchoredPosition: {x: -1.1234131, y: 283.2956}
+  m_SizeDelta: {x: -257.0391, y: 58.0045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436100259
 MonoBehaviour:
@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -921758065032944636, guid: c43bcee39b7806643aa4c6c317b35a6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa07a33808f803c4ea1af68326e99532, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

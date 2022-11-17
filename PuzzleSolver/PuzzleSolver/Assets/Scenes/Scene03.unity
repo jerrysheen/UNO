@@ -2471,7 +2471,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: de901ea3d1c94ff409d61f644cf70615, type: 2}
+  sharedProfile: {fileID: 11400000, guid: c8553c88854b1db408376a467c562faa, type: 2}
 --- !u!4 &1457476371
 Transform:
   m_ObjectHideFlags: 0
@@ -2506,7 +2506,8 @@ MonoBehaviour:
   shouldChangeVignette: 1
   vigChangeTime: 10
   vigStartValue: 0
-  vigEndValue: 1
+  vigEndValue: 0.733
+  vigCenter: {x: 0, y: 0}
   shouldChangeBloom: 0
   bloomChangeTime: 0
   bloomStartValue: 0
@@ -3810,6 +3811,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 992096173}
     m_Modifications:
+    - target: {fileID: 6039394335172743217, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 799d6b567b0a62f4fba7bd8cf2f019ee, type: 3}
+    - target: {fileID: 6039394335172743217, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335172743218, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -713.7246
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335172743218, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.8661
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335172743218, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335172743218, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
+      propertyPath: blinkMaxTime
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6039394335579267348, guid: 8a22ada051e81d245bab2b6fc5fc3c0e, type: 3}
       propertyPath: nextLineIndex
       value: 3

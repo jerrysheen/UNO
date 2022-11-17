@@ -29,7 +29,7 @@ namespace StoryManagement
             //if (curr == currStoryLine) currStoryLine = next;
 
             // 提交验证由本地去完成。
-            Debug.LogError(curr);
+            Debug.Log("CurrState : " + curr);
                 currStory.currStoryLine = curr;
                 onGameStateChanged?.Invoke(curr);
 

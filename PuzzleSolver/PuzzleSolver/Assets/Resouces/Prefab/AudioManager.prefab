@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneClickSource: {fileID: 0}
-  clickClip: {fileID: 8300000, guid: 46accfc3c9c8a364ebae92b14fbb9138, type: 3}
+  clickClip: {fileID: 8300000, guid: 285926e959ec3114c903fd4894553d2c, type: 3}
   clickVolumn: 0.4
 --- !u!1 &1409728069
 GameObject:
@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c5c2d5f869a0641899116ab5c49920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needDestroy: 1
 --- !u!114 &2966441012384299457
 MonoBehaviour:
   m_ObjectHideFlags: 0

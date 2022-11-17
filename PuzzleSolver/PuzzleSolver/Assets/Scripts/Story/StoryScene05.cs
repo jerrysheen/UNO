@@ -13,7 +13,7 @@ namespace StoryManagement
         Click_Right = 1,
         Click_Left = 2,
         Load_Dialogue = 3,
-        Load_NewScene = 4
+        //Load_NewScene = 4
     }
 
     public class StoryScene05 : Story

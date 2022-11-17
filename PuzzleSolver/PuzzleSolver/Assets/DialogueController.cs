@@ -44,13 +44,14 @@ public class DialogueController : MonoBehaviour
         {
             Debug.LogError("please assign obj first");
         }
-        dialogue.SetActive(false);
+        //dialogue.SetActive(false);
         dialogueShowMat = text.GetComponent<Image>().material;
         dialogueShowMat01 = text01?.GetComponent<Image>().material;
         if (dialogueShowMat01 != null)
         {
             dialogueShowMat01.SetFloat("_ReadSpeed", 0.0f);
         }
+        dialogue.SetActive(false);
     }
 
     private void Update()
@@ -66,7 +67,7 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            dialogue.SetActive(false);
+           
         }
 
         Debug.Log("State Change! ");
@@ -97,11 +98,12 @@ public class DialogueController : MonoBehaviour
 
         if (text01 != null)
         {
-        countdown = 0.0f;
+            countdown = 0.0f;
             while (countdown < blinkMaxTime){
                 countdown += Time.deltaTime * blinkSpeed;
                 //Debug.Log(countdown);
                 dialogueShowMat01.SetFloat("_ReadSpeed", countdown);
+                Debug.Log(countdown);
                 yield return null;
             }
         }

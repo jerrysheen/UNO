@@ -10,7 +10,9 @@ namespace StoryManagement
     public enum StoryLine06
     {
         Start = 0,
-        Finished = 1,
+        Rotate = 1,
+        Sign = 2,
+        Dialogue = 3
     }
 
     public class StoryScene06 : Story

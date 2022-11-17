@@ -178,8 +178,8 @@ MonoBehaviour:
   gotoNextStoryLineThreash: 0
   needSendGotoNextInfo: 1
   nextLineIndex: 2
-  blinkSpeed: 0.2
-  blinkMaxTime: 1.9
+  blinkSpeed: 0.15
+  blinkMaxTime: 2.5
 --- !u!1 &92066380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,8 +3058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -351.20306, y: 272.2228}
-  m_SizeDelta: {x: -1260.1846, y: 55.5439}
+  m_AnchoredPosition: {x: -558.98285, y: 251.3045}
+  m_SizeDelta: {x: -1445.3213, y: 53.8551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465408849
 MonoBehaviour:
@@ -3081,7 +3081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3a2ba62cb49728418d2aeba443ae475, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe21d59b63f27a144a3061305b80eb66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3486,6 +3486,7 @@ MonoBehaviour:
   vigChangeTime: 0
   vigStartValue: 0
   vigEndValue: 0
+  vigCenter: {x: 0, y: 0}
   shouldChangeBloom: 1
   bloomChangeTime: 4
   bloomStartValue: 1
@@ -4362,8 +4363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 13.668335, y: 272.2228}
-  m_SizeDelta: {x: -530.4417, y: 55.5439}
+  m_AnchoredPosition: {x: -23.83191, y: 265.6948}
+  m_SizeDelta: {x: -285.519, y: 51.1729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2101686692
 MonoBehaviour:
@@ -4385,7 +4386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f65825444fe04a468cb3213b743d3e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae417f25b5aedd64ca65a18e51187c52, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

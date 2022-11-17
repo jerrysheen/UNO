@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Scene08AlphaControl : UIControllBase
 {
+    public int reactToLine02 = -1;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class Scene08AlphaControl : UIControllBase
 
     public void onGameStateChange(int state)
     {
-        if (state == reactToLine)
+        if (state == reactToLine || state == reactToLine02)
         {
             if (clip )
             {
