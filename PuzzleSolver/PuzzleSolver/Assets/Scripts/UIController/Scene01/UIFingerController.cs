@@ -25,7 +25,7 @@ public class UIFingerController : UIControllBase
         Debug.Log("State Change! ");
         if ((StoryLine01) state == StoryLine01.Click_Cinnabar)
         {
-            this.GetComponent<Image>().sprite = replaceSprite;
+            this.GetComponent<SpriteRenderer>().sprite = replaceSprite;
         }
     }
 

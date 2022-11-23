@@ -9,6 +9,8 @@ public class Scene04_UIHintCage : UIControllBase
 {
     // Start is called before the first frame update
     public int reactToProcessIndex;
+    public int reactToProcessIndex01 = -1;
+    public int reactToProcessIndex02 = -1;
     public GameObject original;
     public GameObject hint;
     public bool shouldDisableOriginal;
@@ -111,7 +113,7 @@ public class Scene04_UIHintCage : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if (StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex)
+        if (StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex )
         {
             //  this.GetComponent<Image>().sprite = replaceSprite;
             if (shouldGoToNextStoryLine)
@@ -122,6 +124,25 @@ public class Scene04_UIHintCage : UIControllBase
             if(shouldDisableOriginal)original.SetActive(true);
             hint.SetActive(false);
         }
-        
+        else if ( StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex01)
+        {
+            if (shouldGoToNextStoryLine)
+            {
+                StoryManager.getInstance.ValiDateState(reactToProcessIndex01 + 1);
+            }
+
+            if(shouldDisableOriginal)original.SetActive(true);
+            hint.SetActive(false);
+        }else if ( StoryManager.getInstance.currStory.currStoryLine == reactToProcessIndex02)
+        {
+            if (shouldGoToNextStoryLine)
+            {
+                StoryManager.getInstance.ValiDateState(reactToProcessIndex02 + 1);
+            }
+
+            if(shouldDisableOriginal)original.SetActive(true);
+            hint.SetActive(false);
+        }
+
     }
 }

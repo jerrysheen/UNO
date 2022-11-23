@@ -63,7 +63,10 @@ public class UIDisplay : UIControllBase
 
     void Start()
     {
-        if (showObjName == "")
+        if (showObj)
+        {
+        }
+        else if (showObjName == "")
         {
             showObj = this.transform.Find("Show").gameObject;
         }

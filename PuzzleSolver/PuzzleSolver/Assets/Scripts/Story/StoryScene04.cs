@@ -20,7 +20,9 @@ namespace StoryManagement
         Charecter_Move = 8,
         Cage_disapear = 9,
         Butterfly_Fly = 10,
-        End_Scene = 11
+        Butterfl = 11,
+        Butterfly = 12,
+        End_Scene = 13
         
     }
 

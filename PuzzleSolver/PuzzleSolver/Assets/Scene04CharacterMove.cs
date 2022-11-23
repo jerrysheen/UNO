@@ -66,7 +66,7 @@ public class Scene04CharacterMove : UIControllBase
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Door")
+        if (other.name == "PosEnd")
         {
             this.gameObject.SetActive(false);
             StoryManager.getInstance.ValiDateState(nextLineIndex);

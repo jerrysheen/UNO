@@ -15,6 +15,7 @@ public class UIDragable : UIControllBase
     public GameObject idleObj;
 
     public GameObject moveObj;
+    public GameObject halfWayObj;
     public int reactToStoryLine = -1;
     public int parallexStoryLineBefore = 0;
     public int parallexStoryLineAfter = 0;
@@ -48,6 +49,7 @@ public class UIDragable : UIControllBase
        // if(!idleObj || ! moveObj) Debug.LogError("Please assign obj");
         if(moveObj)moveObj.SetActive(false);
         if(idleObj)idleObj.SetActive(true);
+        if(halfWayObj)halfWayObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -64,15 +66,18 @@ public class UIDragable : UIControllBase
                 {
                     idleObj.transform.rotation = Quaternion.Euler(currPos - diff);
                     moveObj.transform.rotation = Quaternion.Euler(currPos - diff);
+                    halfWayObj.transform.rotation = Quaternion.Euler(currPos - diff);
                 }
                 else
                 {
                     idleObj.transform.rotation = Quaternion.Euler(currPos + diff);
                     moveObj.transform.rotation = Quaternion.Euler(currPos + diff);
+                    halfWayObj.transform.rotation = Quaternion.Euler(currPos + diff);
                 }
 
                 idleObj.transform.position = followBy.transform.position;
                 moveObj.transform.position = followBy.transform.position;
+                halfWayObj.transform.position = followBy.transform.position;
                 followRotate = followBy.rotation.eulerAngles;
             }
         }
@@ -106,6 +111,8 @@ public class UIDragable : UIControllBase
                 Debug.Log("Move");
                 firstTimeEnter = true;
                 triggerDrag = false;
+                if(halfWayObj)halfWayObj.SetActive(true);
+                if(moveObj)moveObj.SetActive(false);
             }
         }
 
@@ -128,8 +135,9 @@ public class UIDragable : UIControllBase
             if (StoryManager.getInstance.currStory.currStoryLine == i)
             {
                 triggerDrag = true;
-                if(idleObj)idleObj.SetActive(false);
+                if(halfWayObj)halfWayObj.SetActive(false);
                 if(moveObj)moveObj.SetActive(true);
+                if(idleObj)idleObj.SetActive(false);
                 // // z 表示距离相机的距离
                 // Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
                 // this.transform.position = worldPosition;
@@ -148,6 +156,7 @@ public class UIDragable : UIControllBase
     {
         if (other.name == endPositionColliderName)
         {
+
             StartCoroutine(Wait(disableTime));
         }
 
@@ -190,6 +199,10 @@ public class UIDragable : UIControllBase
                     StoryManager.getInstance.ValiDateState(reactToStoryLine + parallexStoryLineAfter + 1);
                 }  
             }
+            
+            if(moveObj && moveObj.activeSelf) moveObj.SetActive(false);
+            if(idleObj && idleObj.activeSelf) idleObj.SetActive(false);
+            if(halfWayObj && halfWayObj.activeSelf) halfWayObj.SetActive(false);
 
         }
 
@@ -197,7 +210,10 @@ public class UIDragable : UIControllBase
         
         if (disableWhenReachToEnd)
         {
-            moveObj.SetActive(false);
+            if(moveObj && moveObj.activeSelf) moveObj.SetActive(false);
+            if(idleObj && idleObj.activeSelf) idleObj.SetActive(false);
+            if(halfWayObj && halfWayObj.activeSelf) halfWayObj.SetActive(false);
+
             var collider = this.GetComponent<CapsuleCollider2D>();
             if (collider)
             {

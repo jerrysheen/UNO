@@ -22,7 +22,7 @@ public class UIStampController : UIControllBase
     {
         //m_scrollAnimator = GetComponent<Animator>();
         //if(m_scrollAnimator == null) Debug.LogError("Can't find Animator ！");
-
+        Cursor.visible = false;
         StoryManager.onGameStateChanged += onGameStateChange;
         m_image = GetComponent<Image>();
         showObj = this.transform.Find("Show").gameObject;
@@ -92,8 +92,11 @@ public class UIStampController : UIControllBase
                 AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
             }
         }
-        
-        
+
+        GameObject.Find("Finger").GetComponent<TraceMouse>().NeedFollow = false;
+        Cursor.visible = true;
+
+
     }
 }
 

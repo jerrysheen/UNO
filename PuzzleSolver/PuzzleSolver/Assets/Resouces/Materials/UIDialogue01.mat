@@ -39,7 +39,7 @@ Material:
     - _BorderSize: 0.1
     - _DiscardAlphaFrom: 0.23
     - _EnableExternalAlpha: 0
-    - _ReadSpeed: 1.9007869
+    - _ReadSpeed: 1.9030389
     - _ShowAlpha: 0.63
     - _ShowControlValue: 0
     m_Colors:

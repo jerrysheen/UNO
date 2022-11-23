@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 20b27baf89fd3e348af00299740216d9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: "\u201Cquit\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 481
+      width: 301
+      height: 184
+    spriteID: 393fd18ab60659541aba567474ddd19c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2135, y: 130}
+  - name: "\u201Ccontinue \u201D\u7684\u5916\u53D1\u5149"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 176
+      width: 592
+      height: 180
+    spriteID: 480717edd474268488f43483b804568d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1997, y: -356}
+  - name: "\u201Cnew game\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 660
+      height: 164
+    spriteID: 9e53efd001959df44acf1074adad3235
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1955, y: -710}
+  - name: "\u201Cquit\u201D\u7684\u5185\u9634\u5F71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 672
+      y: 4
+      width: 230
+      height: 113
+    spriteID: f0e7ca3b7c21ade46b3549908f554559
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1503, y: -381}
+  - name: "\u201Ccontinue \u201D\u7684\u5185\u9634\u5F71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 364
+      width: 521
+      height: 109
+    spriteID: 173fb9e93eb3445499eac0fc89d830f0
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2033, y: -203}
+  - name: "\u201Cnew game\u201D\u7684\u5185\u9634\u5F71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 313
+      y: 481
+      width: 590
+      height: 89
+    spriteID: ff8415a37c7a8484e833c6582d2f7a21
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1681, y: -269}
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 1024
+  documentSize: {x: 4724, y: 2126}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 0
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 1024
+  textureActualHeight: 1024
+  spritePackingTag: 
+  resliceFromLayer: 0
+  characterMode: 1
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: "\u6309\u952E"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 105
+    mosaicPosition: {x: 0, y: 0}
+  - name: "\u201Cquit\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    spriteName: "\u201Cquit\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 393fd18ab60659541aba567474ddd19c
+    layerID: 135
+    mosaicPosition: {x: 4, y: 481}
+  - name: "\u201Ccontinue \u201D\u7684\u5916\u53D1\u5149"
+    spriteName: "\u201Ccontinue \u201D\u7684\u5916\u53D1\u5149"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 480717edd474268488f43483b804568d
+    layerID: 138
+    mosaicPosition: {x: 4, y: 176}
+  - name: "\u201Cnew game\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    spriteName: "\u201Cnew game\u201D\u7684\u5185\u659C\u9762\u9634\u5F71"
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 9e53efd001959df44acf1074adad3235
+    layerID: 143
+    mosaicPosition: {x: 4, y: 4}
+  - name: "\u6309\u952E\u6441\u4E0B\u53BB"
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 119
+    mosaicPosition: {x: 0, y: 0}
+  - name: "\u201Cquit\u201D\u7684\u5185\u9634\u5F71"
+    spriteName: "\u201Cquit\u201D\u7684\u5185\u9634\u5F71"
+    isGroup: 0
+    parentIndex: 4
+    spriteID: f0e7ca3b7c21ade46b3549908f554559
+    layerID: 146
+    mosaicPosition: {x: 672, y: 4}
+  - name: "\u201Ccontinue \u201D\u7684\u5185\u9634\u5F71"
+    spriteName: "\u201Ccontinue \u201D\u7684\u5185\u9634\u5F71"
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 173fb9e93eb3445499eac0fc89d830f0
+    layerID: 147
+    mosaicPosition: {x: 4, y: 364}
+  - name: "\u201Cnew game\u201D\u7684\u5185\u9634\u5F71"
+    spriteName: "\u201Cnew game\u201D\u7684\u5185\u9634\u5F71"
+    isGroup: 0
+    parentIndex: 4
+    spriteID: ff8415a37c7a8484e833c6582d2f7a21
+    layerID: 148
+    mosaicPosition: {x: 313, y: 481}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 0
+  textureAssetName: "\u6587\u5B57 Texture"
+  prefabAssetName: "\u6587\u5B57 Prefab"
+  spriteLibAssetName: "\u6587\u5B57 Sprite Lib"
+  secondarySpriteTextures: []

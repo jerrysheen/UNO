@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class TraceMouse : MonoBehaviour
 {
-
+    public bool hasBounds;
+    public bool NeedFollow = true;
+    public Vector3 min;
+    public Vector3 max;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +26,21 @@ public class TraceMouse : MonoBehaviour
 
     private void FollowMouse()
     {
-        RectTransform rectTrans = GetComponent<RectTransform>();
+        if (NeedFollow)
+        {
+            RectTransform rectTrans = GetComponent<RectTransform>();
         
-        // z 表示距离相机的距离
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
-        this.transform.position = worldPosition;
+            // z 表示距离相机的距离
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
+            if (hasBounds)
+            {
+
+                    this.transform.position = new Vector3(Mathf.Clamp(worldPosition.x, min.x, max.x), Mathf.Clamp(worldPosition.y, min.y, max.y), Mathf.Clamp(worldPosition.z, min.z, max.z));
+                    return;
+
+            }
+            this.transform.position = worldPosition;
+        }
 
     }
 

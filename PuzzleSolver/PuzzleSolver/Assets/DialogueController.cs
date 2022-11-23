@@ -103,7 +103,7 @@ public class DialogueController : MonoBehaviour
                 countdown += Time.deltaTime * blinkSpeed;
                 //Debug.Log(countdown);
                 dialogueShowMat01.SetFloat("_ReadSpeed", countdown);
-                Debug.Log(countdown);
+//                Debug.Log(countdown);
                 yield return null;
             }
         }
