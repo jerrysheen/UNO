@@ -11,6 +11,7 @@ public class Scene04DoorClicked : UIControllBase
     public string dialogueObjName;
     public string backtoSceneName;
     public float waitTime = 5.0f;
+    public int trueStoryLine = 15;
     void Start()
     {
         dialogueObj = GameObject.Find(dialogueObjName);
@@ -25,14 +26,14 @@ public class Scene04DoorClicked : UIControllBase
     public override void OnClicked()
     {
         base.OnClicked();
-        if (StoryManager.getInstance.currStory.currStoryLine <= 1)
+        if (StoryManager.getInstance.currStory.currStoryLine == 0)
         {
             StartCoroutine(BackToOrigin(waitTime));
         }
-        else if (StoryManager.getInstance.currStory.currStoryLine >= (int) StoryLine04.Charecter_Move)
+        else if(StoryManager.getInstance.currStory.currStoryLine == trueStoryLine)
         {
             // do people move
-            
+            StoryManager.getInstance.currStory.currStoryLine += 1;
         }
     }
     

@@ -20,6 +20,7 @@ public class UIDragable : UIControllBase
     public int parallexStoryLineBefore = 0;
     public int parallexStoryLineAfter = 0;
     public bool disableWhenReachToEnd;
+    private bool isReachEnd = false;
     public bool needResetParent;
     public float disableTime = 0.0f;
     public string endPositionColliderName = "";
@@ -50,6 +51,8 @@ public class UIDragable : UIControllBase
         if(moveObj)moveObj.SetActive(false);
         if(idleObj)idleObj.SetActive(true);
         if(halfWayObj)halfWayObj.SetActive(false);
+
+        isReachEnd = false;
     }
 
     // Update is called once per frame
@@ -82,7 +85,7 @@ public class UIDragable : UIControllBase
             }
         }
 
-        if (triggerDrag)
+        if (triggerDrag && !isReachEnd)
         {
             notYetDrag = false;
             if (Input.GetMouseButton(0) || firstTimeEnter)
@@ -134,10 +137,12 @@ public class UIDragable : UIControllBase
         {
             if (StoryManager.getInstance.currStory.currStoryLine == i)
             {
-                triggerDrag = true;
+                if (isReachEnd) return;
+                    triggerDrag = true;
                 if(halfWayObj)halfWayObj.SetActive(false);
                 if(moveObj)moveObj.SetActive(true);
                 if(idleObj)idleObj.SetActive(false);
+
                 // // z 表示距离相机的距离
                 // Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.gameObject.transform.position.z));
                 // this.transform.position = worldPosition;
@@ -213,7 +218,7 @@ public class UIDragable : UIControllBase
             if(moveObj && moveObj.activeSelf) moveObj.SetActive(false);
             if(idleObj && idleObj.activeSelf) idleObj.SetActive(false);
             if(halfWayObj && halfWayObj.activeSelf) halfWayObj.SetActive(false);
-
+            isReachEnd = true;
             var collider = this.GetComponent<CapsuleCollider2D>();
             if (collider)
             {

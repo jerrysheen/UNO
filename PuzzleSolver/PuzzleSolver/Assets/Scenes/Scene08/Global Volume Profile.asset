@@ -22,7 +22,7 @@ MonoBehaviour:
     showEyeDropper: 1
   center:
     m_OverrideState: 1
-    m_Value: {x: 0.26, y: 0.59}
+    m_Value: {x: 0.34, y: 0.63}
   intensity:
     m_OverrideState: 1
     m_Value: 0

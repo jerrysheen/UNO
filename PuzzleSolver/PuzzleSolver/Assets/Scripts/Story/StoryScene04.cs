@@ -22,8 +22,9 @@ namespace StoryManagement
         Butterfly_Fly = 10,
         Butterfl = 11,
         Butterfly = 12,
-        End_Scene = 13
-        
+        End_Scene1 = 13,
+        End_Scene2 = 14,
+        End_Scene3 = 15
     }
 
     public class StoryScene04 : Story

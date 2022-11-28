@@ -16,13 +16,15 @@ namespace StoryManagement
         PutWoods = 4,
         MoveCandle = 5,
         Fire = 6,
-        aaa,
-        ccc,
-        cccd,
-        rrrr,
-        qqqq,ffff,sss,a,w,errrr,
-        
-        
+        aaa = 7,
+        ccc = 8,
+        cccd = 9,
+        rrrr = 10,
+        qqqq = 11,
+        ffff = 12,
+        sss = 13,
+        a = 14,
+        w = 15,
     }
 
     public class StoryScene08 : Story

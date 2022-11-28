@@ -64,12 +64,13 @@ public class Scene04CageAnim : UIControllBase
         currAnim.SetBool("CageFly",true);
        // yield return new WaitForSeconds(10.5f);
         //currAnim.SetBool("Dissapear",true);
-        
-        StoryManager.getInstance.ValiDateState(nextLineIndex);
         if (clip )
         {
             AudioManager.sceneAudioSource.Stop();
             AudioManager.getInstance.PlaySceneAudio(clip, volume, loop, delay);
         }
+        yield return new WaitForSeconds(1.5f);
+        StoryManager.getInstance.ValiDateState(nextLineIndex);
+
     }
 }
