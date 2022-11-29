@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BorderSize: 0.1
-    - _DiscardAlphaFrom: 0.23
+    - _DiscardAlphaFrom: 0.133
     - _EnableExternalAlpha: 0
-    - _ReadSpeed: 0
+    - _ReadSpeed: 1.9020067
     - _ShowAlpha: 0.63
-    - _ShowControlValue: 0
+    - _ShowControlValue: 1.53
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
